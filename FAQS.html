@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- العلامات الميتا لترميز الأحرف وضبط العرض لجعل التصميم متجاوب -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hull On One Resort</title>
+    <!-- ربط ملف الـ CSS الخارجي -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- شريط التنقل -->
+    <header>
+        <!-- قسم الشعار -->
+        <div class="logo">
+            <a href="main.html">
+                <img src="logo.png" alt="Hull On One Resort Logo">
+            </a>
+        </div>
+
+        <!-- قائمة الموبايل (التنقل الجانبي) -->
+        <div id="mySidenav" class="sidenav">
+            <div class="menu-links">
+                <!-- زر إغلاق القائمة الجانبية -->
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <!-- الروابط في القائمة الجانبية -->
+                <a href="golf.html">GOLF</a>
+                <a href="resturants.html">RESTURANTS</a>
+                <a href="rooms.html">ROOMS</a>
+                <a href="gym and fitness.html">GYM & FITNESS</a>
+                <a class="link44" href="abouttheresort.html">ABOUT THE RESORT</a>
+                <a class="link44" href="packages.html">PACKAGES</a>
+                <a class="link44" href="contact.html">CONTACT</a>
+                <a class="link44" href="faqs.html">FAQS</a>
+            </div>
+        </div>
+
+        <!-- زر لفتح القائمة الجانبية على الموبايل -->
+        <span onclick="openNav()" class="menu" id="main">&#9776;</span>
+        <p class="main-text">MENU</p>
+        <p class="menu-between">|</p>
+
+        <!-- التنقل في النسخة المكتبية -->
+        <nav>
+            <ul class="nav-links">
+                <li><a href="abouttheresort.html">ABOUT THE RESORT</a></li>
+                <li><a href="packages.html">PACKAGES</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="faqs.html">FAQS</a></li>
+            </ul>
+        </nav>
+        
+        <!-- زر "احجز الآن" للموبايل -->
+        <a href="booking.html" class="booknow">Book Now</a>
+    </header>
+
+    <!-- قسم الأسئلة الشائعة -->
+    <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <!-- عنصر من الأسئلة الشائعة -->
+            <div class="faq-item">
+                <button class="faq-question">What are the check-in and check-out times?</button>
+                <div class="faq-answer">
+                    <p>Check-in is at 3:00 PM and check-out is at 11:00 AM. Early check-in or late check-out may be available upon request.</p>
+                </div>
+            </div>
+            <!-- عنصر آخر من الأسئلة الشائعة -->
+            <div class="faq-item">
+                <button class="faq-question">Do you offer packages for golf and accommodation?</button>
+                <div class="faq-answer">
+                    <p>Yes, we have exclusive packages that combine luxury accommodations with world-class golf experiences. Please visit our Packages page for more details.</p>
+                </div>
+            </div>
+            <!-- عنصر آخر من الأسئلة الشائعة -->
+            <div class="faq-item">
+                <button class="faq-question">Are there any special dining options available?</button>
+                <div class="faq-answer">
+                    <p>We offer a variety of gourmet dining experiences at our restaurants and cafés, featuring international cuisine prepared by award-winning chefs.</p>
+                </div>
+            </div>
+            <!-- عنصر آخر من الأسئلة الشائعة -->
+            <div class="faq-item">
+                <button class="faq-question">How can I book a stay or request more information?</button>
+                <div class="faq-answer">
+                    <p>You can easily book your stay via our online booking system or contact us directly through our Contact page for further inquiries.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قائمة الوصولية (لتعديل حجم النص) -->
+    <div id="accessibility-menu">
+        <button id="accessibility-btn">Accessibility</button>
+        <div id="accessibility-options">
+            <button id="increase-text">A+</button>
+            <button id="decrease-text">A-</button>
+            <button id="reset-text">Reset</button>
+        </div>
+    </div>
+
+    <!-- قسم التذييل (الفوتر) -->
+    <footer>
+        <div class="footer-container">
+            <!-- قسم الاشتراك في النشرة الإخبارية (اليسار) -->
+            <div class="subscribe-container">
+                <h3 class="subscribe-text">Subscribe to Our Newsletter</h3>
+                <form>
+                    <input type="email" placeholder="Enter your email" class="email">
+                    <button type="submit" class="subscribe">Subscribe</button>
+                </form>
+            </div>
+    
+            <!-- قسم الوسائط الاجتماعية (المنتصف) -->
+            <div class="footer-section">
+                <h3 style="font-weight: normal;" class="followus">Follow Us</h3>
+                <div class="social-icons">
+                    <!-- روابط أيقونات الوسائط الاجتماعية -->
+                    <a href="https://www.facebook.com/" target="_blank"><img src="facebook-24.svg" alt="Facebook"></a>
+                    <a href="https://www.instagram.com/" target="_blank"><img src="instagram-24.svg" alt="Instagram"></a>
+                    <a href="https://x.com/?lang=en" target="_blank"><img src="twitter-24.svg" alt="Twitter"></a>
+                    <a href="https://www.youtube.com/" target="_blank"><img src="youtube-24.svg" alt="Youtube"></a>
+                </div>
+            </div>
+    
+            <!-- قسم معلومات الاتصال (اليمين) -->
+            <div class="contact-info">
+                <h3 class="contact-info-text">Hull On One Resorts</h3>
+               <div>
+                <p style="color: black; font-size: 14px; padding-top: 4px;">📍 123 Golf Lane, Algarve, Portugal</p>
+                <p style="color: black; font-size: 14px;">📞 +351 123 456 789</p>
+                <p style="color: black; font-size: 14px;">📧 contact@hullonone.com</p>
+               </div> 
+            </div>
+        </div>
+        <p class="footer-bottom">&copy; 2025 Hull On One Resort. All rights reserved.</p>
+    </footer>
+    <!-- ربط ملف الـ JavaScript الخارجي -->
+    <script src="script.js"></script>
+
+</body>
+</html>

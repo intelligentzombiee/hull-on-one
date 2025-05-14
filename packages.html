@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hull On One Resort</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+     <!-- شريط التنقل (الهيدر) -->
+<header>
+    <div class="logo">
+        <!-- رابط الشعار إلى الصفحة الرئيسية -->
+        <a href="main.html">
+            <img src="logo.png" alt="Hull On One Resort Logo">
+        </a>
+    </div>
+
+    <!-- قائمة الموبايل -->
+    <div id="mySidenav" class="sidenav">
+        <div class="menu-links">
+            <!-- زر إغلاق القائمة الجانبية -->
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <!-- روابط داخل القائمة الجانبية -->
+            <a href="golf.html">GOLF</a>
+            <a href="resturants.html">RESTURANTS</a>
+            <a href="rooms.html">ROOMS</a>
+            <a href="gym and fitness.html">GYM & FITNESS</a>
+            <a class="link44" href="abouttheresort.html">ABOUT THE RESORT</a>
+            <a class="link44" href="packages.html">PACKAGES</a>
+            <a class="link44" href="contact.html">CONTACT</a>
+            <a class="link44" href="faqs.html">FAQS</a>
+        </div>
+    </div>
+
+    <!-- زر فتح القائمة الجانبية للموبايل -->
+    <span onclick="openNav()" class="menu" id="main">&#9776;</span>
+    <p class="main-text">MENU</p>
+    <p class="menu-between">|</p>
+
+    <!-- قائمة التنقل للنسخة المكتبية -->
+    <nav>
+        <ul class="nav-links">
+            <!-- روابط القائمة العلوية -->
+            <li><a href="abouttheresort.html">ABOUT THE RESORT</a></li>
+            <li><a href="packages.html">PACKAGES</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="faqs.html">FAQS</a></li>
+        </ul>
+    </nav>
+    <!-- زر "احجز الآن" للموبايل -->
+    <a href="booking.html" class="booknow">Book Now</a>
+</header>
+
+    <!-- قسم الحزم الخاصة -->
+    <section class="packages-section">
+        <h2 class="packages-heading">Exclusive Golf Packages</h2>
+        <p class="packages-intro">Discover our specially curated packages, offering luxury, excitement, and unforgettable golfing experiences.</p>
+      
+        <div class="packages-container">
+          <!-- حزمة "Five Rounds" -->
+          <div class="package-card">
+            <h3>Five Rounds Package</h3>
+            <p>Enjoy a five-night stay in a luxury suite with five rounds of 18-hole golf, including a guaranteed round at the famous "Sea View" course.</p>
+            <p>Bonus: A free digital training session!</p>
+            <a href="booking.html" class="package-btn">Book Now</a>
+          </div>
+      
+          <!-- حزمة "Triple Tee" -->
+          <div class="package-card">
+            <h3>Triple Tee Package</h3>
+            <p>Stay two nights in a double room with breakfast included. Play three rounds of 18-hole golf, including one round at "Sea View" if available.</p>
+            <p>Includes free golf cart rental & 20% off at the Pro Shop!</p>
+            <a href="booking.html" class="package-btn">Book Now</a>
+          </div>
+      
+          <!-- حزمة "Relaxation Retreat" -->
+          <div class="package-card">
+            <h3>Relaxation Retreat</h3>
+            <p>Enjoy a one-night stay with full breakfast, fine dining at any of our resort restaurants, and access to the golf courses (fees apply).</p>
+            <p>Bonus: Free club rental!</p>
+            <a href="booking.html" class="package-btn">Book Now</a>
+          </div>
+      
+          <!-- حزم مخصصة للشركات -->
+          <div class="package-card">
+            <h3>Custom Corporate Packages</h3>
+            <p>Plan tailor-made corporate events and long-term stays. Contact us to design the perfect package for your needs.</p>
+            <a href="contact.html" class="package-btn">Contact Us</a>
+          </div>
+        </div>
+    </section>
+
+    <!-- قسم الوصولية (لتعديل حجم النص) -->
+    <div id="accessibility-menu">
+        <button id="accessibility-btn">Accessibility</button>
+        <div id="accessibility-options">
+            <button id="increase-text">A+</button>
+            <button id="decrease-text">A-</button>
+            <button id="reset-text">Reset</button>
+        </div>
+    </div>
+
+    <!-- تذييل الصفحة (الفوتر) -->
+    <footer>
+        <div class="footer-container">
+            <!-- قسم الاشتراك في النشرة الإخبارية (اليسار) -->
+            <div class="subscribe-container">
+                <h3 class="subscribe-text">Subscribe to Our Newsletter</h3>
+                <form>
+                    <input type="email" placeholder="Enter your email" class="email">
+                    <button type="submit" class="subscribe">Subscribe</button>
+                </form>
+            </div>
+    
+            <!-- قسم الوسائط الاجتماعية (الوسط) -->
+            <div class="footer-section">
+                <h3 style="font-weight: normal;" class="followus">Follow Us</h3>
+                <div class="social-icons">
+                    <!-- روابط أيقونات الوسائط الاجتماعية -->
+                    <a href="https://www.facebook.com/" target="_blank"><img src="facebook-24.svg" alt="Facebook"></a>
+                    <a href="https://www.instagram.com/" target="_blank"><img src="instagram-24.svg" alt="Instagram"></a>
+                    <a href="https://x.com/?lang=en" target="_blank"><img src="twitter-24.svg" alt="Twitter"></a>
+                    <a href="https://www.youtube.com/" target="_blank"><img src="youtube-24.svg" alt="Youtube"></a>
+                </div>
+            </div>
+    
+            <!-- قسم معلومات الاتصال (اليمين) -->
+            <div class="contact-info">
+                <h3 class="contact-info-text">Hull On One Resorts</h3>
+               <div>
+                <p style="color: black; font-size: 14px; padding-top: 4px;">📍 123 Golf Lane, Algarve, Portugal</p>
+                <p style="color: black; font-size: 14px;">📞 +351 123 456 789</p>
+                <p style="color: black; font-size: 14px;">📧 contact@hullonone.com</p>
+               </div> 
+            </div>
+        </div>
+        <p class="footer-bottom">&copy; 2025 Hull On One Resort. All rights reserved.</p>
+    </footer>
+
+    <!-- ربط ملف JavaScript -->
+<script src="script.js"></script>
+
+</body>
+</html>

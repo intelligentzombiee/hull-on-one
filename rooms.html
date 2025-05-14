@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- تعيين مجموعة الأحرف للمستند (UTF-8) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- تحديد إعدادات العرض والتكبير على الأجهزة المحمولة -->
+    <title>Hull On One Resort</title> <!-- عنوان الصفحة في التبويب -->
+    <link rel="stylesheet" href="style.css"> <!-- ربط ملف الـ CSS الخاص بتصميم الصفحة -->
+</head>
+<body>
+
+     <!-- شريط التنقل -->
+<header>
+  <div class="logo">
+      <a href="main.html">
+          <img src="logo.png" alt="Hull On One Resort Logo"> <!-- شعار المنتجع مع رابط الصفحة الرئيسية -->
+      </a>
+  </div>
+
+  <!-- قائمة الموبايل -->
+  <div id="mySidenav" class="sidenav">
+      <div class="menu-links">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> <!-- زر لإغلاق القائمة الجانبية -->
+          <a href="golf.html">GOLF</a>
+          <a href="resturants.html">RESTURANTS</a>
+          <a href="rooms.html">ROOMS</a>
+          <a href="gym and fitness.html">GYM & FITNESS</a>
+          <a class="link44" href="abouttheresort.html">ABOUT THE RESORT</a>
+          <a class="link44" href="packages.html">PACKAGES</a>
+          <a class="link44" href="contact.html">CONTACT</a>
+          <a class="link44" href="faqs.html">FAQS</a>
+      </div>
+  </div>
+
+  <span onclick="openNav()" class="menu" id="main">&#9776;</span><p class="main-text">MENU</p><p class="menu-between">|</p> <!-- زر لفتح القائمة الجانبية في الموبايل -->
+
+  <!-- قائمة التنقل على سطح المكتب -->
+  <nav>
+      <ul class="nav-links">
+          <li><a href="abouttheresort.html">ABOUT THE RESORT</a></li>
+          <li><a href="packages.html">PACKAGES</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+          <li><a href="faqs.html">FAQS</a></li>
+      </ul>
+  </nav>
+  <!-- زر "احجز الآن" على الموبايل -->
+  <a href="booking.html" class="booknow">Book Now</a>
+</header>
+
+    <!-- قسم الغرف -->
+    <section class="rooms-hero">
+      <h1 class="rooms-heading">Luxury & Comfort Awaits</h1>
+      <p class="rooms-subtext">Experience world-class hospitality in our elegantly designed rooms and suites.</p>
+    </section>
+    
+    <!-- خيارات الغرف -->
+    <section class="room-options">
+      <h2>Explore Our Exclusive Rooms</h2>
+      <div class="room-container">
+        <div class="room-card">
+          <img src="delux room.jpg" alt="Deluxe Room"> <!-- صورة الغرفة الفاخرة -->
+          <h3>Deluxe Room</h3>
+          <p>A stylish and comfortable space with breathtaking views of the golf course.</p>
+          <span class="price">From €250/night</span>
+        </div>
+        <div class="room-card">
+          <img src="luxury suit.jpg" alt="Luxury Suite"> <!-- صورة الجناح الفاخر -->
+          <h3>Luxury Suite</h3>
+          <p>Spacious and elegant, perfect for a premium getaway with top-tier amenities.</p>
+          <span class="price">From €400/night</span>
+        </div>
+        <div class="room-card">
+          <img src="private villa 3.webp" alt="Private Villa"> <!-- صورة الفيلا الخاصة -->
+          <h3>Private Villa</h3>
+          <p>An exclusive, secluded retreat with a private pool and personalized service.</p>
+          <span class="price">From €800/night</span>
+        </div>
+      </div>
+    </section>
+    
+    <!-- وسائل الراحة داخل الغرف -->
+    <section class="room-amenities">
+      <h2>Luxury Amenities for Your Comfort</h2>
+      <div class="amenities-grid">
+        <div class="amenity-item">
+          <i class="fas fa-bed"></i>
+          <h3>Elegant Bedding</h3>
+          <p>Premium linens & plush mattresses for ultimate relaxation.</p>
+        </div>
+        <div class="amenity-item">
+          <i class="fas fa-utensils"></i>
+          <h3>In-Room Dining</h3>
+          <p>Delicious meals delivered to your door, 24/7.</p>
+        </div>
+        <div class="amenity-item">
+          <i class="fas fa-spa"></i>
+          <h3>Spa-Inspired Bathrooms</h3>
+          <p>Luxurious bath products and rainfall showers.</p>
+        </div>
+        <div class="amenity-item">
+          <i class="fas fa-tv"></i>
+          <h3>Smart Entertainment</h3>
+          <p>Flat-screen TVs with streaming services & fast Wi-Fi.</p>
+        </div>
+        <div class="amenity-item">
+          <i class="fas fa-dumbbell"></i>
+          <h3>Wellness Access</h3>
+          <p>Full access to gym, spa, and wellness programs.</p>
+        </div>
+        <div class="amenity-item">
+          <i class="fas fa-swimmer"></i>
+          <h3>Private Pool (Suites)</h3>
+          <p>Exclusive access to private pools in select suites.</p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- قسم الحجز -->
+    <section class="rooms-cta">
+      <h2 style="font-size: 40px;">Book Your Stay Today</h2>
+      <p style="font-size: 17px; padding-bottom: 15px;">Indulge in comfort and luxury at Hull In One. Reserve your room now.</p>
+      <a href="booking.html" class="rooms-btn">Reserve Now</a>
+    </section>
+      
+    <!-- التذييل -->
+    <footer>
+        <div class="footer-container">
+            <!-- قسم الاشتراك في النشرة الإخبارية (اليسار) -->
+            <div class="subscribe-container">
+                <h3 class="subscribe-text">Subscribe to Our Newsletter</h3>
+                <form>
+                    <input type="email" placeholder="Enter your email" class="email"> <!-- حقل إدخال البريد الإلكتروني -->
+                    <button type="submit" class="subscribe">Subscribe</button> <!-- زر الاشتراك -->
+                </form>
+            </div>
+    
+            <!-- قسم الشبكات الاجتماعية (الوسط) -->
+            <div class="footer-section">
+              <h3 style="font-weight: normal;" class="followus">Follow Us</h3>
+              <div class="social-icons">
+                    <a href="https://www.facebook.com/" target="_blank"><img src="facebook-24.svg" alt="Facebook"></a> <!-- رابط الفيسبوك -->
+                    <a href="https://www.instagram.com/" target="_blank"><img src="instagram-24.svg" alt="Instagram"></a> <!-- رابط الإنستغرام -->
+                    <a href="https://x.com/?lang=en" target="_blank"><img src="twitter-24.svg" alt="Twitter"></a> <!-- رابط تويتر -->
+                    <a href="https://www.youtube.com/" target="_blank"><img src="youtube-24.svg" alt="Youtube"></a> <!-- رابط يوتيوب -->
+                </div>
+            </div>
+    
+            <!-- قسم معلومات الاتصال (اليمين) -->
+            <div class="contact-info">
+                <h3 class="contact-info-text">Hull On One Resorts</h3>
+               <div>
+                <p style="color: black; font-size: 14px; padding-top: 4px;">📍 123 Golf Lane, Algarve, Portugal</p> <!-- عنوان المنتجع -->
+                <p style="color: black; font-size: 14px;">📞 +351 123 456 789</p> <!-- رقم الهاتف -->
+                <p style="color: black; font-size: 14px;">📧 contact@hullonone.com</p> <!-- البريد الإلكتروني -->
+               </div> 
+            </div>
+        </div>
+        <p class="footer-bottom">&copy; 2025 Hull On One Resort. All rights reserved.</p> <!-- حقوق الملكية -->
+    </footer>
+<script src="script.js"></script> <!-- ربط ملف الجافا سكربت -->
+</body>
+</html>

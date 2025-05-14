@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- تعريف إعدادات الصفحة مثل الترميز وتنسيق العرض -->
+    <meta charset="UTF-8"> <!-- تحديد الترميز إلى UTF-8 لتدعيم جميع الأحرف -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- إعدادات التوافق مع الأجهزة المحمولة -->
+    <title>Hull On One Resort</title> <!-- عنوان الصفحة الذي يظهر في التبويب -->
+    <link rel="stylesheet" href="style.css"> <!-- ربط ملف الأنماط الخارجي لتنسيق الصفحة -->
+</head>
+<body>
+
+     <!-- شريط التنقل (Navigation Bar) -->
+<header>
+  <div class="logo">
+      <a href="main.html"> <!-- رابط يؤدي إلى الصفحة الرئيسية -->
+          <img src="logo.png" alt="Hull On One Resort Logo"> <!-- شعار المنتجع -->
+      </a>
+  </div>
+
+  <!-- القائمة الجانبية للموبايل (Mobile Menu) -->
+  <div id="mySidenav" class="sidenav">
+      <div class="menu-links">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> <!-- زر لإغلاق القائمة -->
+          <a href="golf.html">GOLF</a> <!-- رابط إلى صفحة الجولف -->
+          <a href="resturants.html">RESTURANTS</a> <!-- رابط إلى صفحة المطاعم -->
+          <a href="rooms.html">ROOMS</a> <!-- رابط إلى صفحة الغرف -->
+          <a href="gym and fitness.html">GYM & FITNESS</a> <!-- رابط إلى صفحة اللياقة البدنية -->
+          <a class="link44" href="abouttheresort.html">ABOUT THE RESORT</a> <!-- رابط إلى صفحة معلومات المنتجع -->
+          <a class="link44" href="packages.html">PACKAGES</a> <!-- رابط إلى صفحة الحزم -->
+          <a class="link44" href="contact.html">CONTACT</a> <!-- رابط إلى صفحة الاتصال -->
+          <a class="link44" href="faqs.html">FAQS</a> <!-- رابط إلى صفحة الأسئلة الشائعة -->
+      </div>
+  </div>
+
+  <span onclick="openNav()" class="menu" id="main">&#9776;</span><p class="main-text">MENU</p><p class="menu-between">|</p>
+
+  <!-- شريط التنقل الخاص بأجهزة الكمبيوتر (Desktop Navigation) -->
+  <nav>
+      <ul class="nav-links">
+          <li><a href="abouttheresort.html">ABOUT THE RESORT</a></li>
+          <li><a href="packages.html">PACKAGES</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+          <li><a href="faqs.html">FAQS</a></li>
+      </ul>
+  </nav>
+  <!-- زر "حجز الآن" للأجهزة المحمولة -->
+  <a href="booking.html" class="booknow">Book Now</a>
+</header>
+
+    <!-- قسم البطاقة الرئيسية للمطاعم -->
+    <section class="restaurant-hero">
+      <h1 class="restaurant-heading">A Culinary Journey Awaits</h1> <!-- عنوان الصفحة الرئيسية للمطاعم -->
+      <p class="restaurant-subtext">Discover world-class dining experiences with exquisite flavors and breathtaking views.</p> <!-- وصف للمطاعم -->
+    </section>
+    
+    <!-- قسم المطاعم المميزة -->
+    <section class="restaurants">
+      <h2>Our Signature Restaurants</h2> <!-- عنوان للمطاعم المميزة -->
+      <div class="restaurant-container">
+        <!-- بطاقة لمطعم "Gourmet Haven" -->
+        <div class="restaurant-card">
+          <img src="fine-dining-in-the-best-restaurants.jpg" alt="Fine Dining"> <!-- صورة المطعم -->
+          <h3>Gourmet Haven</h3> <!-- اسم المطعم -->
+          <p>An exclusive fine-dining experience offering international cuisine with a modern twist.</p> <!-- وصف للمطعم -->
+        </div>
+        <!-- بطاقة لمطعم "Seaview Grill" -->
+        <div class="restaurant-card">
+          <img src="Sizzle_Rooftop_Restaurantv3.jpg" alt="Seaview Restaurant">
+          <h3>Seaview Grill</h3>
+          <p>Enjoy fresh seafood and premium steaks with stunning views of the championship golf course.</p>
+        </div>
+        <!-- بطاقة لمطعم "La Bella Vita" -->
+        <div class="restaurant-card">
+          <img src="italian cusion.jpg" alt="Italian Cuisine">
+          <h3>La Bella Vita</h3>
+          <p>Authentic Italian cuisine crafted by award-winning chefs in a cozy, elegant setting.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- قسم المقاهي -->
+    <section class="cafes">
+      <h2>Relax & Unwind at Our Cafés</h2>
+      <div class="cafe-container">
+        <!-- بطاقة للمقهى "The Coffee Lounge" -->
+        <div class="cafe-card">
+          <img src="cafe.webp" alt="Coffee Lounge">
+          <h3>The Coffee Lounge</h3>
+          <p>Indulge in specialty coffee, handcrafted pastries, and a relaxing atmosphere.</p>
+        </div>
+        <!-- بطاقة للمقهى "Sunset Pool Bar" -->
+        <div class="cafe-card">
+          <img src="pool bar 2.jpg" alt="Pool Bar">
+          <h3>Sunset Pool Bar</h3>
+          <p>Sip on signature cocktails and fresh juices while enjoying the serene poolside ambiance.</p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- قسم "حجز طاولتك" -->
+    <section class="restaurant-cta">
+      <h2 style="font-size: 40px;">Reserve Your Table Today</h2> <!-- عنوان الحجز -->
+      <p style="font-size: 17px; padding-bottom: 17px;">Experience the finest dining with impeccable service and unforgettable flavors.</p> <!-- وصف الحجز -->
+      <a href="booking.html" class="restaurant-btn">Make a Reservation</a> <!-- رابط الحجز -->
+    </section>
+
+    <!-- قائمة الوصول (Accessibility Menu) -->
+    <div id="accessibility-menu">
+      <button id="accessibility-btn">Accessibility</button> <!-- زر الوصول -->
+      <div id="accessibility-options">
+          <button id="increase-text">A+</button> <!-- زر لزيادة حجم النص -->
+          <button id="decrease-text">A-</button> <!-- زر لتقليص حجم النص -->
+          <button id="reset-text">Reset</button> <!-- زر لإعادة تعيين حجم النص -->
+      </div>
+  </div>
+
+    <!-- التذييل (Footer) -->
+    <footer>
+        <div class="footer-container">
+            <!-- قسم الاشتراك في النشرة الإخبارية -->
+            <div class="subscribe-container">
+                <h3 class="subscribe-text">Subscribe to Our Newsletter</h3>
+                <form>
+                    <input type="email" placeholder="Enter your email" class="email">
+                    <button type="submit" class="subscribe">Subscribe</button>
+                </form>
+            </div>
+    
+            <!-- قسم الوسائط الاجتماعية -->
+            <div class="footer-section">
+              <h3 style="font-weight: normal;" class="followus">Follow Us</h3>
+              <div class="social-icons">
+                    <a href="https://www.facebook.com/" target="_blank"><img src="facebook-24.svg" alt="Facebook"></a>
+                    <a href="https://www.instagram.com/" target="_blank"><img src="instagram-24.svg" alt="Instagram"></a>
+                    <a href="https://x.com/?lang=en" target="_blank"><img src="twitter-24.svg" alt="Twitter"></a>
+                    <a href="https://www.youtube.com/" target="_blank"><img src="youtube-24.svg" alt="Youtube"></a>
+                </div>
+            </div>
+    
+            <!-- قسم معلومات الاتصال -->
+            <div class="contact-info">
+                <h3 class="contact-info-text">Hull On One Resorts</h3>
+               <div>
+                <p style="color: black; font-size: 14px; padding-top: 4px;">📍 123 Golf Lane, Algarve, Portugal</p> <!-- عنوان المنتجع -->
+                <p style="color: black; font-size: 14px;">📞 +351 123 456 789</p> <!-- رقم الهاتف -->
+                <p style="color: black; font-size: 14px;">📧 contact@hullonone.com</p> <!-- البريد الإلكتروني -->
+               </div> 
+            </div>
+        </div>
+        <p class="footer-bottom">&copy; 2025 Hull On One Resort. All rights reserved.</p> <!-- حقوق الطبع والنشر -->
+    </footer>
+<script src="script.js"></script> <!-- ربط ملف جافا سكريبت -->
+</body>
+</html>

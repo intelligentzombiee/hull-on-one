@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- تحديد الترميز ليكون UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- لضبط الصفحة لتناسب حجم الشاشة -->
+    <title>Hull On One Resort</title> <!-- عنوان الصفحة في التبويب -->
+    <link rel="stylesheet" href="style.css"> <!-- ربط ملف CSS لتنسيق الصفحة -->
+</head>
+<body>
+
+    <!-- شريط التنقل (Navigation Bar) -->
+<header>
+  <div class="logo">
+      <a href="main.html">
+          <img src="logo.png" alt="Hull On One Resort Logo"> <!-- الشعار الخاص بالمنتجع -->
+      </a>
+  </div>
+
+  <!-- القائمة الجانبية للموبايل (Mobile Menu) -->
+  <div id="mySidenav" class="sidenav">
+      <div class="menu-links">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> <!-- زر لإغلاق القائمة الجانبية -->
+          <a href="golf.html">GOLF</a> <!-- رابط لصفحة الجولف -->
+          <a href="resturants.html">RESTURANTS</a> <!-- رابط لصفحة المطاعم -->
+          <a href="rooms.html">ROOMS</a> <!-- رابط لصفحة الغرف -->
+          <a href="gym and fitness.html">GYM & FITNESS</a> <!-- رابط لصفحة الجيم واللياقة البدنية -->
+          <a class="link44" href="abouttheresort.html">ABOUT THE RESORT</a> <!-- رابط لصفحة معلومات المنتجع -->
+          <a class="link44" href="packages.html">PACKAGES</a> <!-- رابط لصفحة الحزم -->
+          <a class="link44" href="contact.html">CONTACT</a> <!-- رابط لصفحة الاتصال -->
+          <a class="link44" href="faqs.html">FAQS</a> <!-- رابط لصفحة الأسئلة الشائعة -->
+      </div>
+  </div>
+
+  <span onclick="openNav()" class="menu" id="main">&#9776;</span><p class="main-text">MENU</p><p class="menu-between">|</p> <!-- زر لفتح القائمة الجانبية في الموبايل -->
+
+  <!-- شريط التنقل للأجهزة المكتبية (Desktop Navigation) -->
+  <nav>
+      <ul class="nav-links">
+          <li><a href="abouttheresort.html">ABOUT THE RESORT</a></li> <!-- رابط لصفحة معلومات المنتجع -->
+          <li><a href="packages.html">PACKAGES</a></li> <!-- رابط لصفحة الحزم -->
+          <li><a href="contact.html">CONTACT</a></li> <!-- رابط لصفحة الاتصال -->
+          <li><a href="faqs.html">FAQS</a></li> <!-- رابط لصفحة الأسئلة الشائعة -->
+      </ul>
+  </nav>
+
+  <!-- زر "حجز الآن" للأجهزة المحمولة -->
+  <a href="booking.html" class="booknow">Book Now</a>
+</header>
+
+    <!-- قسم عرض الجولف الرئيسي -->
+    <section class="golf-hero">
+      <h1 class="golf-heading">Experience Championship-Level Golf</h1> <!-- عنوان الجولف -->
+      <p class="golf-subtext">Home to world-class golf courses, premium training facilities, and unforgettable moments.</p> <!-- وصف الجولف -->
+    </section>
+    
+    <!-- قسم مرافق الجولف -->
+    <section class="golf-facilities">
+      <h2 style="font-size: 33px; padding-bottom: 30px;">Our Premier Golf Facilities</h2> <!-- عنوان للمرافق -->
+      <div class="facility-container">
+        <!-- بطاقة عرض "Seaview Championship Course" -->
+        <div class="facility-card">
+          <img src="putt-group-golf-moon-palace-cancun_4335bfb840.webp" alt="Seaview Golf Course"> <!-- صورة للمرافق -->
+          <h3>Seaview Championship Course</h3> <!-- اسم المرافق -->
+          <p>Our signature 18-hole course with breathtaking coastal views.</p> <!-- وصف المرافق -->
+        </div>
+        <!-- بطاقة عرض "Exclusive Golf Clubs" -->
+        <div class="facility-card">
+          <img src="world-class-golf-cabo-real-golf-club.jpg" alt="Golf Clubs"> <!-- صورة للمرافق -->
+          <h3>Exclusive Golf Clubs</h3> <!-- اسم المرافق -->
+          <p>Enjoy VIP access to two world-class golf clubs with premium amenities.</p> <!-- وصف المرافق -->
+        </div>
+        <!-- بطاقة عرض "Pro Shop" -->
+        <div class="facility-card">
+          <img src="LC-Golf-20_1000px.webp" alt="Pro Shop"> <!-- صورة للمرافق -->
+          <h3>Pro Shop</h3> <!-- اسم المرافق -->
+          <p>Find the latest golf equipment, apparel, and accessories from top brands.</p> <!-- وصف المرافق -->
+        </div>
+        <!-- بطاقة عرض "Advanced Training" -->
+        <div class="facility-card">
+          <img src="group of golfers sitting talking during golf club social event.jpg" alt="Golf Training"> <!-- صورة للمرافق -->
+          <h3>Advanced Training</h3> <!-- اسم المرافق -->
+          <p>Enhance your skills with digital training, night-lit driving ranges, and expert coaching.</p> <!-- وصف المرافق -->
+        </div>
+      </div>
+    </section>
+    
+    <!-- قسم الحزم المخصصة للجولف -->
+    <section class="golf-packages">
+      <h2 style="font-size: 40px;">Tailored Golf Packages</h2> <!-- عنوان الحزم -->
+      <p>Choose from our exclusive golf experiences, designed for both professionals and enthusiasts.</p> <!-- وصف الحزم -->
+      <a href="packages.html" class="explore-pack">Explore Packages</a> <!-- رابط لعرض الحزم -->
+    </section>
+    
+    <!-- قسم دعوة للحجز (Call to Action) -->
+    <section class="golf-cta">
+      <h2>Ready for an Unforgettable Golf Experience?</h2> <!-- عنوان دعوة للحجز -->
+      <p style="padding-bottom: 17px; font-size: 20px;">Book your ultimate golf getaway today and take your game to the next level.</p> <!-- وصف دعوة للحجز -->
+      <a href="booking.html" class="golf-btn">Book Now</a> <!-- زر "حجز الآن" -->
+    </section>
+
+    <!-- قسم الوصول (Accessibility Menu) -->
+    <div id="accessibility-menu">
+      <button id="accessibility-btn">Accessibility</button> <!-- زر لإظهار خيارات الوصول -->
+      <div id="accessibility-options">
+          <button id="increase-text">A+</button> <!-- زر لزيادة حجم النص -->
+          <button id="decrease-text">A-</button> <!-- زر لتقليص حجم النص -->
+          <button id="reset-text">Reset</button> <!-- زر لإعادة تعيين حجم النص -->
+      </div>
+  </div>
+    
+    <!-- التذييل (Footer) -->
+    <footer>
+        <div class="footer-container">
+            <!-- قسم الاشتراك في النشرة الإخبارية -->
+            <div class="subscribe-container">
+                <h3 class="subscribe-text">Subscribe to Our Newsletter</h3> <!-- عنوان قسم الاشتراك -->
+                <form>
+                    <input type="email" placeholder="Enter your email" class="email"> <!-- حقل إدخال البريد الإلكتروني -->
+                    <button type="submit" class="subscribe">Subscribe</button> <!-- زر الاشتراك -->
+                </form>
+            </div>
+    
+            <!-- قسم الوسائط الاجتماعية -->
+            <div class="footer-section">
+              <h3 style="font-weight: normal;" class="followus">Follow Us</h3> <!-- عنوان قسم الوسائط الاجتماعية -->
+              <div class="social-icons">
+                    <a href="https://www.facebook.com/" target="_blank"><img src="facebook-24.svg" alt="Facebook"></a> <!-- أيقونة فيسبوك -->
+                    <a href="https://www.instagram.com/" target="_blank"><img src="instagram-24.svg" alt="Instagram"></a> <!-- أيقونة إنستغرام -->
+                    <a href="https://x.com/?lang=en" target="_blank"><img src="twitter-24.svg" alt="Twitter"></a> <!-- أيقونة تويتر -->
+                    <a href="https://www.youtube.com/" target="_blank"><img src="youtube-24.svg" alt="Youtube"></a> <!-- أيقونة يوتيوب -->
+                </div>
+            </div>
+    
+            <!-- قسم معلومات الاتصال -->
+            <div class="contact-info">
+                <h3 class="contact-info-text">Hull On One Resorts</h3> <!-- عنوان قسم معلومات الاتصال -->
+               <div>
+                <p style="color: black; font-size: 14px; padding-top: 4px;">📍 123 Golf Lane, Algarve, Portugal</p> <!-- عنوان المنتجع -->
+                <p style="color: black; font-size: 14px;">📞 +351 123 456 789</p> <!-- رقم الهاتف -->
+                <p style="color: black; font-size: 14px;">📧 contact@hullonone.com</p> <!-- البريد الإلكتروني -->
+               </div> 
+            </div>
+        </div>
+        <p class="footer-bottom">&copy; 2025 Hull On One Resort. All rights reserved.</p> <!-- حقوق الطبع والنشر -->
+    </footer>
+
+<script src="script.js"></script> <!-- ربط ملف جافا سكريبت -->
+</body>
+</html>

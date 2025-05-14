@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hull On One Resort</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+      <!-- شريط التنقل -->
+<header>
+  <div class="logo">
+      <a href="main.html">
+          <img src="logo.png" alt="Hull On One Resort Logo">
+      </a>
+  </div>
+
+  <!-- قائمة الجوال -->
+  <div id="mySidenav" class="sidenav">
+      <div class="menu-links">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <a href="golf.html">GOLF</a>
+          <a href="resturants.html">RESTURANTS</a>
+          <a href="rooms.html">ROOMS</a>
+          <a href="gym and fitness.html">GYM & FITNESS</a>
+          <a class="link44" href="abouttheresort.html">ABOUT THE RESORT</a>
+          <a class="link44" href="packages.html">PACKAGES</a>
+          <a class="link44" href="contact.html">CONTACT</a>
+          <a class="link44" href="faqs.html">FAQS</a>
+      </div>
+  </div>
+
+  <!-- زر لفتح القائمة الجانبية (قائمة الجوال) -->
+  <span onclick="openNav()" class="menu" id="main">&#9776;</span><p class="main-text">MENU</p><p class="menu-between">|</p>
+
+  <!-- شريط التنقل على سطح المكتب -->
+  <nav>
+      <ul class="nav-links">
+          <li><a href="abouttheresort.html">ABOUT THE RESORT</a></li>
+          <li><a href="packages.html">PACKAGES</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+          <li><a href="faqs.html">FAQS</a></li>
+      </ul>
+  </nav>
+  <!-- زر "احجز الآن" على الجوال -->
+  <a href="booking.html" class="booknow">Book Now</a>
+</header>
+
+    <!-- قسم البطل للتواصل -->
+    <section class="contact-hero">
+        <div class="contact-overlay"></div>
+        <div class="contact-content">
+          <h1>Get In Touch</h1>
+          <p>We'd love to hear from you. Contact us for more information, to book your stay or to make a reservation.</p>
+        </div>
+      </section>
+      
+      <!-- قسم نموذج الاتصال -->
+      <section class="contact-form-section">
+        <div class="contact-container">
+          <h2>Contact Us</h2>
+          <form action="submit_form.php" method="post">
+            <div class="form-group">
+              <label for="name">Name:</label>
+              <input class="data" type="text" id="name" name="name" required placeholder="Your Name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input class="data" type="email" id="email" name="email" required placeholder="Your Email">
+            </div>
+            <div class="form-group">
+              <label for="message">Message:</label>
+              <textarea class="data" id="message" name="message" required placeholder="Your Message"></textarea>
+            </div>
+            <button type="submit" class="contact-btn">Send Message</button>
+          </form>
+        </div>
+      </section>
+      
+      <!-- قسم الوصول لميزات الوصول (تكبير/تصغير النص) -->
+      <div id="accessibility-menu">
+        <button id="accessibility-btn">Accessibility</button>
+        <div id="accessibility-options">
+            <button id="increase-text">A+</button>
+            <button id="decrease-text">A-</button>
+            <button id="reset-text">Reset</button>
+        </div>
+    </div>
+   
+
+    <!-- قسم التذييل -->
+    <footer>
+        <div class="footer-container">
+            <!-- قسم الاشتراك في النشرة الإخبارية (يسار) -->
+            <div class="subscribe-container">
+                <h3 class="subscribe-text">Subscribe to Our Newsletter</h3>
+                <form>
+                    <input type="email" placeholder="Enter your email" class="email">
+                    <button type="submit" class="subscribe">Subscribe</button>
+                </form>
+            </div>
+    
+            <!-- قسم الوسائل الاجتماعية (منتصف) -->
+            <div class="footer-section">
+              <h3 style="font-weight: normal;" class="followus">Follow Us</h3>
+              <div class="social-icons">
+                    <a href="https://www.facebook.com/" target="_blank"><img src="facebook-24.svg" alt="Facebook"></a>
+                    <a href="https://www.instagram.com/" target="_blank"><img src="instagram-24.svg" alt="Instagram"></a>
+                    <a href="https://x.com/?lang=en" target="_blank"><img src="twitter-24.svg" alt="Twitter"></a>
+                    <a href="https://www.youtube.com/" target="_blank"><img src="youtube-24.svg" alt="Youtube"></a>
+                </div>
+            </div>
+    
+            <!-- قسم معلومات الاتصال (يمين) -->
+            <div class="contact-info">
+                <h3 class="contact-info-text">Hull On One Resorts</h3>
+               <div>
+                <p style="color: black; font-size: 14px; padding-top: 4px;">📍 123 Golf Lane, Algarve, Portugal</p>
+                <p style="color: black; font-size: 14px;">📞 +351 123 456 789</p>
+                <p style="color: black; font-size: 14px;">📧 contact@hullonone.com</p>
+               </div> 
+            </div>
+        </div>
+        <p class="footer-bottom">&copy; 2025 Hull On One Resort. All rights reserved.</p>
+    </footer>
+<script src="script.js"></script>
+</body>
+</html>

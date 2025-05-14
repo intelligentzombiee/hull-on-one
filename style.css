@@ -1,0 +1,2347 @@
+/* الأنماط العامة */
+body {
+  margin: 0; /* إزالة الهوامش */
+  padding: 0; /* إزالة الحشو */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* تعيين نوع الخط */
+}
+
+/* رأس الصفحة */
+header {
+  display: flex; /* استخدام العرض المرن */
+  align-items: center; /* محاذاة العناصر في الوسط عمودياً */
+  background-color: white; /* تعيين لون الخلفية إلى الأبيض */
+  width: 100%; /* عرض الرأس بنسبة 100% */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* إضافة ظل أسود أسفل الرأس */
+  position: -webkit-sticky; /* جعل الرأس ثابتاً في أعلى الصفحة لـ Safari */
+  position: sticky; /* جعل الرأس ثابتاً في أعلى الصفحة */
+  top: 0; /* إبقاء الرأس في أعلى الصفحة */
+  z-index: 1000; /* التأكد من أن الرأس يبقى فوق المحتوى الآخر */
+  padding-bottom: 25px; /* إضافة حشو أسفل الرأس */
+  padding-top: 10px; /* إضافة حشو أعلى الرأس */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* تعيين نوع الخط */
+}
+
+/* الشعار */
+.logo img {
+  width: 150px; /* ضبط حجم الشعار */
+  height: auto; /* الحفاظ على نسبة الطول إلى العرض */
+  padding-right: 40px; /* إضافة حشو من اليمين */
+  padding-left: 20px; /* إضافة حشو من اليسار */
+  padding-top: 7px; /* إضافة حشو من الأعلى */
+}
+
+/* الروابط في شريط التنقل */
+.nav-links {
+  list-style-type: none; /* إزالة النقاط من القائمة */
+  margin: 0; /* إزالة الهوامش */
+  padding: 0; /* إزالة الحشو */
+  display: inline-flex; /* عرض العناصر بشكل أفقي */
+  display: flex; /* استخدام العرض المرن */
+  gap: 50px; /* إضافة مسافة بين العناصر */
+}
+
+nav a {
+  text-decoration: none; /* إزالة التسطير من الروابط */
+  color: black; /* تعيين لون النص إلى الأسود */
+  font-size: 15px; /* تعيين حجم الخط */
+  padding-left: 10px; /* إضافة حشو من اليسار */
+}
+
+nav a:hover {
+  color: rgb(140, 115, 67); /* تغيير اللون عند التمرير فوق الرابط */
+}
+
+.nav-links a.active {
+  font-weight: bold; /* جعل النص عريضاً عند اختيار الصفحة */
+  color: rgb(140, 115, 67); /* تغيير اللون إلى اللون الرئيسي */
+}
+
+/* شريط التنقل الجانبي */
+.sidenav {
+  height: 100%; /* جعل ارتفاع الشريط الجانبي 100% */
+  width: 300px; /* تعيين عرض الشريط الجانبي */
+  position: fixed; /* تثبيت الشريط الجانبي */
+  top: 0; /* وضعه في أعلى الصفحة */
+  left: 0; /* وضعه على اليسار */
+  background-color: rgb(140, 115, 67); /* تعيين لون الخلفية إلى اللون الرئيسي */
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2); /* إضافة ظل على اليمين */
+  overflow-x: hidden; /* إخفاء المحتوى الأفقي الزائد */
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; /* إضافة تأثيرات الانتقال */
+  transform: translateX(-100%); /* بدء الشريط الجانبي مخفياً خارج الصفحة */
+  opacity: 0; /* جعل الشريط الجانبي شفافاً */
+  visibility: hidden; /* إخفاء الشريط الجانبي */
+  padding-top: 70px; /* دفع المحتوى لأسفل */
+  padding-left: 15px; /* إضافة مسافة من اليسار */
+}
+
+/* زر إغلاق الشريط الجانبي */
+.sidenav .closebtn {
+  position: absolute; /* وضع الزر في موقع ثابت */
+  top: 15px; /* تحديد المسافة من الأعلى */
+  right: 20px; /* تحديد المسافة من اليمين */
+  font-size: 36px; /* تعيين حجم الخط */
+  cursor: pointer; /* تغيير شكل المؤشر عند المرور فوق الزر */
+}
+
+/* الروابط داخل الشريط الجانبي */
+.sidenav a {
+  display: block; /* جعل كل رابط عنصر بلوك */
+  padding: 14.5px 10px; /* إضافة حشو في الأعلى والأسفل */
+  text-decoration: none; /* إزالة التسطير */
+  font-size: 22px; /* تعيين حجم الخط */
+  font-weight: bold; /* جعل النص عريضاً */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* تعيين نوع الخط */
+  transition: 0.3s; /* إضافة تأثير انتقال */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* إضافة ظل للنص */
+  color: black; /* تعيين لون النص إلى الأسود */
+}
+
+/* التمرير فوق الروابط داخل الشريط الجانبي */
+.sidenav a:hover {
+  color: #f1f1f1; /* تغيير اللون إلى اللون الأبيض عند التمرير */
+}
+
+.menu-links {
+  margin-top: 28px; /* إضافة مسافة أعلى الروابط */
+}
+
+.closebtn {
+  transition: transform 0.3s ease; /* إضافة تأثير التحول للزر */
+}
+
+.closebtn:hover {
+  transform: rotate(90deg); /* جعل الزر يدور عند التمرير فوقه */
+}
+
+/* عنصر الـ span */
+span {
+  cursor: pointer; /* تغيير شكل المؤشر عند المرور فوق العنصر */
+  font-size: 15px; /* تعيين حجم الخط */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* تعيين نوع الخط */
+  color: rgb(140, 115, 67); /* تعيين اللون إلى اللون الرئيسي */
+  font-weight: bold; /* جعل النص عريضاً */
+  font-size: 25px; /* تعيين حجم الخط */
+  padding-right: 15px; /* إضافة حشو من اليمين */
+}
+
+/* النص الرئيسي */
+.main-text {
+  padding-right: 25px; /* إضافة حشو من اليمين */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* تعيين نوع الخط */
+  color: rgb(140, 115, 67); /* تعيين اللون إلى اللون الرئيسي */
+  font-weight: bold; /* جعل النص عريضاً */
+}
+
+/* النص بين العناصر */
+.menu-between {
+  font-size: 20px; /* تعيين حجم الخط */
+  color: rgb(140, 115, 67); /* تعيين اللون إلى اللون الرئيسي */
+  font-weight: bold; /* جعل النص عريضاً */
+  padding-right: 30px; /* إضافة حشو من اليمين */
+}
+
+/* زر الحجز الآن */
+.booknow {
+  display: flex; /* استخدام العرض المرن */
+  align-items: center; /* محاذاة النص عمودياً */
+  justify-content: center; /* محاذاة النص أفقياً */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* تعيين نوع الخط */
+  background-color: rgb(140, 115, 67); /* تعيين اللون الخلفي إلى اللون الرئيسي */
+  color: white; /* تعيين لون النص إلى الأبيض */
+  font-size: 20px; /* تعيين حجم الخط */
+  font-weight: bold; /* جعل النص عريضاً */
+  text-align: center; /* محاذاة النص في المنتصف */
+  text-decoration: none; /* إزالة التسطير */
+  padding: 0 30px; /* إضافة حشو أفقي */
+  height: 75px; /* تعيين ارتفاع الزر */
+  border: none; /* إزالة الحدود */
+  margin-left: 230px; /* إضافة مسافة من اليسار */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* إضافة ظل للنص */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* إضافة ظل للصندوق */
+  cursor: pointer; /* تغيير شكل المؤشر إلى اليد */
+  border-radius: 3px; /* إضافة زوايا مدورة للزر */
+}
+
+/* التمرير فوق زر الحجز الآن */
+.booknow:hover {
+  background-color: rgb(120, 95, 55); /* تغيير اللون إلى لون أغمق عند التمرير */
+}
+
+/* الأنماط العامة (تُبقى كما هي) */
+
+/* الأسلوب المبدئي (Mobile First) - الأنماط الافتراضية */
+.nav-links {
+  display: none; /* إخفاء روابط التنقل بشكل افتراضي على الأجهزة المحمولة */
+}
+
+.menu {
+  display: block; /* عرض أيقونة القائمة (همبرغر) */
+}
+
+/* شريط التنقل على أجهزة سطح المكتب */
+@media screen and (min-width: 768px) {
+  .nav-links {
+    display: flex; /* عرض روابط التنقل بشكل خطي على الشاشات الكبيرة */
+    margin-left: auto; /* دفع العناصر إلى اليمين */
+  }
+}
+
+/* أسلوب القائمة الجانبية على الأجهزة المحمولة */
+@media screen and (max-width: 767px) {
+  .sidenav {
+    display: block; /* عرض القائمة الجانبية على الأجهزة المحمولة */
+  }
+
+  .sidenav a {
+    font-size: 18px; /* تعديل حجم الخط للأجهزة المحمولة */
+  }
+
+  .sidenav a:hover {
+    background-color: rgb(120, 95, 55); /* تمييز الروابط عند التمرير عليها */
+  }
+
+  .menu-links {
+    padding-left: 0; /* إزالة الحشو داخل القائمة الجانبية */
+  }
+
+  .booknow {
+    font-size: 16px; /* تصغير حجم الخط على الأجهزة المحمولة */
+    margin: 20px auto; /* محاذاة الزر في منتصف الصفحة */
+    padding: 10px 30px; /* تعديل الحشو ليناسب الشاشة */
+    width: auto; /* السماح للزر بالتحجيم التلقائي */
+  }
+}
+
+footer {
+  background-color: #e4d3b9;
+  color: rgb(140, 115, 67);
+  padding: 20px 40px;  /* تحديد المسافة داخل التذييل */
+  text-align: center;  /* محاذاة النص في المنتصف */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* تحديد نوع الخط */
+  height: auto;  /* ضبط الارتفاع تلقائيًا ليتناسب مع المحتوى */
+  display: flex;  /* استخدام flexbox لتنسيق العناصر داخل التذييل */
+  flex-direction: column;  /* ترتيب العناصر بشكل عمودي */
+  align-items: center;  /* محاذاة العناصر في المنتصف عموديًا */
+}
+
+/* حاوية للاشتراك + الرموز الاجتماعية + معلومات الاتصال */
+.footer-container {
+  display: flex;  /* استخدام flexbox لتوزيع الأقسام بشكل مرن */
+  justify-content: space-between; /* توزيع الأقسام بشكل متساوٍ */
+  align-items: center;  /* محاذاة العناصر في المنتصف عموديًا */
+  width: 100%;  /* جعل الحاوية تأخذ العرض الكامل */
+  max-width: 1200px;  /* تحديد الحد الأقصى للعرض */
+  padding: 10px 20px;  /* تحديد المسافة الداخلية للحاوية */
+}
+
+/* قسم الاشتراك */
+.subscribe-container {
+  text-align: left; /* محاذاة النص لليسار */
+  flex: 1; /* جعل هذا القسم يشغل مساحة متساوية */
+  display: flex; 
+  flex-direction: column;  /* ترتيب العناصر بشكل عمودي */
+  align-items: flex-start; /* محاذاة العناصر لليسار */
+}
+
+/* قسم الرموز الاجتماعية */
+.social-icons {
+  display: flex;  /* استخدام flexbox لتوزيع الرموز الاجتماعية بشكل مرن */
+  justify-content: center; /* محاذاة الرموز إلى المنتصف */
+  gap: 15px; /* تحديد المسافة بين الرموز */
+  flex: 1;
+  padding-top: 10px; /* إضافة حشو من الأعلى للرموز */
+}
+.social-icons img:hover {
+  transform: scale(1.2); /* تكبير الصورة عند التمرير */
+  opacity: 0.7;  /* تقليل الشفافية أثناء التمرير */
+}
+.social-icons img {
+  width: 33px;  /* تحديد عرض الصورة */
+  height: 33px;  /* تحديد ارتفاع الصورة */
+  transition: transform 0.3s; /* إضافة تأثير انتقالي لتكبير الصورة */
+}
+
+/* قسم معلومات الاتصال */
+.contact-info {
+  text-align: center;  /* محاذاة النص في المنتصف */
+  padding-right: 50px;  /* إضافة حشو من اليمين */
+}
+
+/* أسفل التذييل (حقوق الطبع والنشر) */
+.footer-bottom {
+  font-size: 12px;  /* تحديد حجم الخط */
+  opacity: 0.8;  /* تقليل الشفافية */
+  text-align: center; /* محاذاة النص في المنتصف */
+  margin-top: 50px; /* إضافة هامش من الأعلى */
+  font-size: 13px; /* تعديل حجم النص أسفل التذييل */
+}
+
+/* زر الاشتراك */
+.subscribe {
+  width: 160px;  /* تحديد عرض الزر */
+  background-color: rgb(140, 115, 67);  /* تحديد لون الخلفية */
+  color: white;  /* تحديد لون النص */
+  border: none;  /* إزالة الحدود */
+  font-weight: bold;  /* جعل النص عريضًا */
+  cursor: pointer;  /* تغيير شكل المؤشر عند التمرير فوق الزر */
+  border-radius: 5px;  /* إضافة حواف مستديرة */
+  transition: background-color 0.3s;  /* إضافة تأثير انتقالي لتغيير اللون */
+  text-align: center; /* محاذاة النص في المنتصف */
+  text-decoration: none;  /* إزالة تزيين النص */
+  padding: 0 35px; /* تحديد الحشو الأفقي */
+  height: 39px;  /* تحديد ارتفاع الزر */
+  font-size: 15px; /* تحديد حجم الخط */
+  cursor: pointer;  /* تغيير شكل المؤشر عند التمرير */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* إضافة ظل للنص */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* إضافة ظل للصندوق */
+}
+
+.subscribe:hover {
+  opacity: 0.8;  /* تقليل الشفافية عند التمرير */
+  transform: scale(1.05);  /* تكبير الزر عند التمرير */
+}
+
+/* إدخال البريد الإلكتروني */
+.email {
+  width: 160px;  /* تحديد عرض الحقل */
+  height: 37px;  /* تحديد ارتفاع الحقل */
+  border: none;  /* إزالة الحدود */
+  border-radius: 5px;  /* إضافة حواف مستديرة */
+  font-size: 14px;  /* تحديد حجم الخط */
+  margin-right: 5px;  /* إضافة هامش من اليمين */
+  padding-left: 10px;  /* إضافة حشو من اليسار */
+}
+
+/* نص الاشتراك */
+.subscribe-text {
+  padding-bottom: 10px;  /* إضافة حشو من الأسفل */
+  color: black;  /* تحديد لون النص */
+}
+
+/* قسم التذييل */
+.footer-section {
+  padding-right: 232px;  /* إضافة حشو من اليمين */
+  padding-top: 20px;  /* إضافة حشو من الأعلى */
+}
+
+.footer-section {
+  color: black;  /* تحديد لون النص */
+  font-weight: normal;  /* تحديد وزن الخط */
+}
+
+.contact-info-text {
+  color: black;  /* تحديد لون النص */
+  font-weight: normal;  /* تحديد وزن الخط */
+}
+
+
+/* تصميم متجاوب للتذييل */
+@media (max-width: 768px) {
+  /* جعل أقسام التذييل تتراكم فوق بعضها عند الشاشات الصغيرة */
+  .footer-container {
+      flex-direction: column;  /* ترتيب الأقسام بشكل عمودي */
+      align-items: center;  /* محاذاة الأقسام إلى المنتصف */
+      padding: 10px;  /* إضافة حشو للتباعد داخل الحاوية */
+  }
+
+  /* تعديل قسم الاشتراك */
+  .subscribe-container {
+      text-align: center;  /* محاذاة النص في المنتصف */
+      flex: none;  /* عدم توسيع هذا القسم لملء المساحة */
+      margin-bottom: 20px; /* إضافة مسافة بين الأقسام */
+  }
+
+  .subscribe-container input, .subscribe-container button {
+      width: 100%; /* ضمان أن الحقول تشغل العرض الكامل على الشاشات الصغيرة */
+      margin: 5px 0; /* إضافة مسافة رأسية بين الحقول */
+  }
+
+  /* تعديل الرموز الاجتماعية على الشاشات الصغيرة */
+  .social-icons {
+      justify-content: center;  /* محاذاة الرموز إلى المنتصف */
+      text-align: center;  /* محاذاة النص داخل الرموز */
+      gap: 10px;  /* تحديد المسافة بين الرموز */
+      padding-top: 10px; /* إضافة حشو من الأعلى */
+      margin-bottom: 35px; /* إضافة مسافة من الأسفل */
+      padding-left: 230px; /* إضافة حشو من اليسار */
+  }
+
+  .social-icons img {
+      width: 30px;  /* تحديد عرض الصورة */
+      height: 30px;  /* تحديد ارتفاع الصورة */
+  }
+
+  .followus {
+    padding-left: 230px;  /* إضافة حشو من اليسار */
+  }
+
+  /* تعديل معلومات الاتصال */
+  .contact-info {
+      text-align: center;  /* محاذاة النص في المنتصف */
+      padding-right: 0;  /* إزالة الحشو من اليمين */
+      margin-bottom: 20px;  /* إضافة مسافة من الأسفل */
+  }
+
+  /* تعديل أسفل التذييل */
+  .footer-bottom {
+      font-size: 11px; /* تقليص حجم النص في الشاشات الصغيرة */
+      margin-top: 20px;  /* إضافة مسافة من الأعلى */
+  }
+}
+
+/* قسم البطل (Hero) */
+.hero-section {
+  position: relative;  /* تحديد موضع العنصر بالنسبة للمحتوى */
+  width: 100%;  /* جعل العرض 100% */
+  height: 100vh; /* عرض كامل ارتفاع الشاشة */
+  background-image: url('mainimage.jpg'); /* استبدال المسار بالصورة الخاصة بك */
+  background-size: cover; /* ضمان تغطية الصورة لكامل المساحة */
+  background-position: center; /* محاذاة الصورة في المنتصف */
+  background-attachment: fixed; /* منع الصورة من التمرير عند التمرير لأسفل */
+}
+
+.hero-overlay {
+  position: absolute;  /* تحديد موضع العنصر بالنسبة للـ Hero section */
+  top: 0;  /* تحديد الموضع العلوي */
+  left: 0;  /* تحديد الموضع الأيسر */
+  width: 100%;  /* تحديد العرض 100% */
+  height: 100%;  /* تحديد الارتفاع 100% */
+  background: rgba(0, 0, 0, 0.5); /* إضافة طبقة مظللة سوداء مع الشفافية */
+}
+
+.hero-text {
+  position: absolute;  /* تحديد موضع النص بشكل مطلق */
+  top: 50%;  /* محاذاة النص عموديًا في المنتصف */
+  left: 50%;  /* محاذاة النص أفقيًا في المنتصف */
+  transform: translate(-50%, -50%);  /* تعديل الموقع لكي يكون في المنتصف تمامًا */
+  font-size: 3.5rem; /* تحديد حجم الخط */
+  color: antiquewhite; /* تحديد لون النص */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 4); /* إضافة ظل للنص */
+  font-weight: bold; /* جعل النص عريضًا */
+  text-align: center; /* محاذاة النص في المنتصف */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* تحديد نوع الخط */
+}
+
+/* محتوى إضافي أسفل قسم البطل */
+.intro {
+  padding: 50px 20px;  /* إضافة حشو داخلي */
+  background-color: white; /* خلفية بيضاء للقسم */
+  text-align: center;  /* محاذاة النص في المنتصف */
+}
+
+
+/* تنسيق عنوان قسم النص التقديمي */
+.intro-text h2 {
+  color: rgb(140, 115, 67); /* اللون الرئيسي */
+  font-size: 2rem; /* تحديد حجم الخط */
+  margin-bottom: 30px; /* إضافة مسافة أسفل العنوان */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* إضافة ظل للنص لإبرازه */
+}
+
+/* تنسيق النص في فقرة النص التقديمي */
+.intro-text p {
+  font-size: 1.1rem; /* تحديد حجم الخط */
+  color: #555; /* لون النص */
+  line-height: 1.6; /* ارتفاع السطر لتحسين القراءة */
+  max-width: 800px; /* تحديد الحد الأقصى للعرض */
+  margin: 0 auto; /* محاذاة النص في المنتصف */
+}
+
+/* تنسيق قسم المزايا */
+.features {
+  background-color: white; /* خلفية بيضاء للقسم */
+  padding: 50px 20px; /* إضافة حشو داخلي */
+  text-align: center; /* محاذاة النص في المنتصف */
+}
+
+/* تنسيق عنوان قسم المزايا */
+.features-title {
+  font-size: 2.5rem; /* تحديد حجم الخط */
+  color: rgb(140, 115, 67); /* اللون الرئيسي */
+  margin-bottom: 60px; /* إضافة مسافة أسفل العنوان */
+  font-weight: 700; /* جعل النص عريض */
+}
+
+/* تنسيق عنصر الميزة الفردية */
+.feature-item {
+  display: inline-block; /* عرض العنصر بشكل مستعرض */
+  margin-bottom: 15px; /* إضافة مسافة من الأسفل */
+  width: 22%; /* تحديد العرض كنسبة مئوية */
+  background-color: white; /* خلفية بيضاء */
+  padding: 20px; /* إضافة حشو داخلي */
+  border-radius: 8px; /* إضافة حواف مدورة */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف للعنصر */
+  text-align: center; /* محاذاة النص في المنتصف */
+  transition: transform 0.3s ease; /* إضافة تأثير انتقالي عند التمرير */
+}
+
+/* تأثير عند التمرير على عنصر الميزة */
+.feature-item:hover {
+  transform: translateY(-10px); /* رفع العنصر عند التمرير */
+}
+
+/* تنسيق الصورة داخل عنصر الميزة */
+.feature-item img {
+  width: 250px; /* تعديل حجم الصورة */
+  height: auto; /* الحفاظ على النسبة الأصلية للصورة */
+  margin-bottom: 20px; /* إضافة مسافة أسفل الصورة */
+}
+
+/* تنسيق عنوان الميزة داخل العنصر */
+.feature-item h3 {
+  font-size: 1.5rem; /* تحديد حجم الخط */
+  color: rgb(140, 115, 67); /* اللون الرئيسي */
+  margin-bottom: 10px; /* إضافة مسافة أسفل العنوان */
+}
+
+/* تنسيق النص داخل عنصر الميزة */
+.feature-item p {
+  font-size: 1.1rem; /* تحديد حجم الخط */
+  color: #555; /* لون النص */
+  line-height: 1.6; /* ارتفاع السطر لتحسين القراءة */
+  max-width: 800px; /* تحديد الحد الأقصى للعرض */
+  margin: 0 auto; /* محاذاة النص في المنتصف */
+}
+
+/* تنسيق عنوان إعلان الميزة */
+.feature-ad-heading {
+  font-size: 2.5em; /* تحديد حجم الخط */
+  color: rgb(140, 115, 67); /* اللون الرئيسي */
+  font-weight: bold; /* جعل النص عريض */
+  margin-bottom: 25px; /* إضافة مسافة أسفل العنوان */
+  margin-top: 100px; /* إضافة مسافة من الأعلى */
+  text-align: center; /* محاذاة النص في المنتصف */
+  padding-top: 100px; /* إضافة حشو من الأعلى */
+  padding-bottom: 10px; /* إضافة حشو من الأسفل */
+}
+
+/* تنسيق الفقرة في قسم الإعلان */
+.feature-ad-paragraph {
+  font-size: 1.2em; /* تحديد حجم الخط */
+  color: #333; /* تحديد لون النص */
+  line-height: 1.6; /* ارتفاع السطر لتحسين القراءة */
+  margin-bottom: 20px; /* إضافة مسافة أسفل الفقرة */
+  max-width: 900px; /* تحديد الحد الأقصى للعرض */
+  margin-left: auto; /* محاذاة الفقرة إلى اليسار */
+  margin-right: auto; /* محاذاة الفقرة إلى اليمين */
+  text-align: center; /* محاذاة النص في المنتصف */
+  padding-bottom: 45px; /* إضافة حشو أسفل الفقرة */
+}
+
+/* تنسيق صورة الإعلان */
+.feature-ad-image {
+  width: 1100px; /* تحديد عرض الصورة */
+  height: 570px; /* تحديد ارتفاع الصورة */
+  margin-left: auto; /* محاذاة الصورة إلى اليسار */
+  margin-right: auto; /* محاذاة الصورة إلى اليمين */
+  display: flex; /* استخدام flexbox لتوزيع العناصر */
+}
+
+/* تنسيق الأقسام المختلفة (الغرف، المطاعم، الجولف، الصالة الرياضية) */
+#rooms, #restaurants, #golf, #gym {
+  background-color: #fafafa; /* تحديد خلفية بيضاء فاتحة لهذه الأقسام */
+}
+
+/* تنسيق قسم الدعوة إلى العمل */
+.cta-section {
+  background: linear-gradient(135deg, rgb(140, 115, 67), rgb(120, 95, 55)); /* خلفية تدرج لوني جذاب */
+  padding: 80px 20px; /* إضافة حشو داخلي */
+  text-align: center; /* محاذاة النص في المنتصف */
+  color: white; /* لون النص أبيض */
+  position: relative; /* جعل القسم نسبيًا لتمكين التنسيق */
+  overflow: hidden; /* إخفاء المحتويات الزائدة */
+}
+
+/* تنسيق عنوان قسم الدعوة إلى العمل */
+.cta-heading {
+  font-size: 2.8em; /* تحديد حجم الخط */
+  margin-bottom: 20px; /* إضافة مسافة أسفل العنوان */
+  font-weight: bold; /* جعل النص عريض */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* إضافة ظل للنص لإبرازه */
+  animation: fadeInDown 1s ease-out; /* إضافة تأثير حركة للعنوان */
+}
+
+/* تنسيق الفقرة في قسم الدعوة إلى العمل */
+.cta-paragraph {
+  font-size: 1.3em; /* تحديد حجم الخط */
+  margin-bottom: 30px; /* إضافة مسافة أسفل الفقرة */
+  max-width: 800px; /* تحديد الحد الأقصى للعرض */
+  margin-left: auto; /* محاذاة الفقرة إلى اليسار */
+  margin-right: auto; /* محاذاة الفقرة إلى اليمين */
+  line-height: 1.6; /* ارتفاع السطر لتحسين القراءة */
+  animation: fadeInUp 1s ease-out; /* إضافة تأثير حركة للفقرة */
+}
+
+/* تنسيق زر الدعوة إلى العمل */
+.cta-button {
+  display: inline-block; /* عرض الزر بشكل مستعرض */
+  background-color: white; /* خلفية بيضاء للزر */
+  color: rgb(140, 115, 67); /* اللون الرئيسي للنص */
+  font-size: 1.3em; /* تحديد حجم الخط */
+  font-weight: bold; /* جعل النص عريض */
+  padding: 18px 40px; /* إضافة حشو داخلي */
+  border-radius: 50px; /* إضافة حواف دائرية للزر */
+  text-decoration: none; /* إزالة التحديد أسفل النص */
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease; /* إضافة تأثيرات انتقالية للزر */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* إضافة ظل خفيف للزر */
+  animation: pulse 2s infinite; /* إضافة تأثير نبض مستمر للزر */
+}
+
+/* تأثير عند التمرير على زر الدعوة إلى العمل */
+.cta-button:hover {
+  background-color: rgb(140, 115, 67); /* تغيير الخلفية إلى اللون الرئيسي عند التمرير */
+  color: white; /* تغيير لون النص إلى الأبيض عند التمرير */
+  transform: scale(1.05); /* تكبير الزر عند التمرير */
+}
+
+/* تصميم متجاوب للأجهزة المحمولة والأجهزة اللوحية */
+
+/* للأجهزة التي تحتوي على عرض أصغر من 768px (الأجهزة اللوحية والمحمولة) */
+@media (max-width: 768px) {
+  /* قسم البطل (Hero Section) */
+  .hero-text {
+    font-size: 2.1rem; /* تصغير حجم النص ليتناسب مع الشاشات الأصغر */
+  }
+
+  /* قسم الميزات */
+  .feature-item {
+    width: 48%; /* السماح بوجود عنصرين في كل صف */
+    margin-bottom: 20px; /* إضافة مسافة أسفل العنصر */
+  }
+
+  /* تعديل حجم الصور في قسم الميزات */
+  .feature-item img {
+    width: 100%; /* جعل الصور قابلة للتجاوب مع الشاشات الصغيرة */
+    height: auto; /* الحفاظ على نسبة الارتفاع والعرض */
+  }
+
+  /* قسم الدعوة إلى العمل (CTA) */
+  .cta-button {
+    font-size: 1.2em; /* تعديل حجم النص في الزر */
+    padding: 15px 30px; /* تعديل الحشو في الزر */
+  }
+
+  /* تعديل صورة قسم البطل */
+  .hero-section {
+    background-attachment: scroll; /* تعطيل تأثير التمرير المتوازي (Parallax) في الشاشات الصغيرة */
+  }
+
+  .feature-ad-image {
+    width: 100%; /* جعل الصور قابلة للتجاوب مع الشاشات الصغيرة */
+    height: auto; /* الحفاظ على نسبة الارتفاع والعرض */
+  }
+
+  /* عناوين الأقسام */
+  .feature-ad-heading, .features-title, .cta-heading {
+    font-size: 2rem; /* تصغير حجم الخط للعناوين في الأجهزة المحمولة */
+  }
+
+  /* قسم المقدمة */
+  .intro-text h2 {
+    font-size: 1.8rem; /* تصغير حجم الخط في العنوان */
+  }
+
+  .intro-text p {
+    font-size: 1rem; /* تعديل حجم الخط في الفقرة */
+  }
+}
+
+
+/* للأجهزة التي تحتوي على عرض أصغر من 480px (معظم الهواتف المحمولة) */
+@media (max-width: 480px) {
+  .feature-item {
+    width: 100%; /* عرض كامل لكل عنصر على الشاشات الصغيرة جدًا */
+  }
+
+  .hero-text {
+    font-size: 2rem; /* تصغير حجم النص أكثر للشاشات الصغيرة جدًا */
+  }
+
+  .cta-button {
+    font-size: 1.1em; /* تعديل حجم النص في الزر ليتناسب مع الشاشات الصغيرة */
+    padding: 12px 25px; /* تعديل الحشو في الزر لتناسب الهواتف الصغيرة */
+  }
+
+  .feature-ad-image {
+    width: 100%; /* جعل الصور تأخذ العرض الكامل على الشاشات الصغيرة */
+    height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
+  }
+
+  .intro-text p {
+    font-size: 0.95rem; /* تعديل حجم النص في الفقرات ليتناسب مع الشاشات الصغيرة */
+  }
+}
+
+/* صورة الخلفية لقسم الحزم */
+.packages-section {
+  background: url('MAX_0436-V2\ \(1\).jpg.webp') center/cover no-repeat; /* تعيين صورة الخلفية في المنتصف مع التغطية */
+  background-blend-mode: overlay; /* إضافة تأثير دمج بين الصورة والخلفية */
+  background-color: rgba(0, 0, 0, 0.6); /* طبقة داكنة لزيادة وضوح النصوص */
+  color: white; /* التأكد من أن النص يكون مرئيًا بلون أبيض */
+  padding: 80px 20px; /* إضافة حشوات للقسم */
+  text-align: center; /* محاذاة النص إلى المنتصف */
+  position: relative; /* تعيين الموضع النسبي للقسم */
+}
+
+.packages-heading {
+  font-size: 2.9em; /* حجم الخط الكبير للعناوين */
+  color: antiquewhite; /* لون النص يكون قريب من الأبيض العتيق */
+  margin-bottom: 35px; /* إضافة مسافة أسفل العنوان */
+}
+
+.packages-intro {
+  font-size: 1.3em; /* حجم النص للفقرات الصغيرة */
+  color: antiquewhite; /* لون النص هو الأبيض العتيق */
+  margin-bottom: 50px; /* إضافة مسافة أسفل الفقرة */
+  max-width: 700px; /* تحديد الحد الأقصى لعرض النص */
+  margin-left: auto; /* محاذاة النص إلى الجهة اليسرى */
+  margin-right: auto; /* محاذاة النص إلى الجهة اليمنى */
+}
+
+/* بطاقات الحزم */
+.packages-container {
+  display: grid; /* عرض المحتوى باستخدام شبكة */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* تحديد الأعمدة بطريقة مرنة لتناسب الشاشات المختلفة */
+  gap: 20px; /* تحديد المسافة بين العناصر */
+  justify-content: center; /* محاذاة العناصر إلى المنتصف */
+  padding: 0 20px; /* إضافة حشوة للقسم */
+}
+.package-card {
+  background: white; /* تعيين خلفية بيضاء للبطاقة */
+  padding: 30px; /* إضافة حشو داخل البطاقة */
+  border-radius: 15px; /* منح البطاقة زوايا دائرية */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف للبطاقة */
+  text-align: center; /* محاذاة النص داخل البطاقة إلى المنتصف */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* إضافة تأثير عند التفاعل مع البطاقة */
+}
+
+.package-card h3 {
+  font-size: 1.8em; /* حجم خط العنوان داخل البطاقة */
+  color: rgb(140, 115, 67); /* تعيين لون العنوان */
+  margin-bottom: 15px; /* إضافة مسافة أسفل العنوان */
+}
+
+.package-card p {
+  font-size: 1.1em; /* حجم خط الفقرات داخل البطاقة */
+  color: #666; /* تعيين لون النص للفقرات */
+  line-height: 1.6; /* تحديد ارتفاع السطر لتحسين القراءة */
+  margin-bottom: 15px; /* إضافة مسافة أسفل الفقرة */
+}
+
+.package-btn {
+  display: inline-block; /* جعل الزر عنصرًا في السطر ذاته */
+  background-color: rgb(140, 115, 67); /* تعيين لون خلفية الزر */
+  color: white; /* تعيين لون النص داخل الزر */
+  font-size: 1.2em; /* حجم النص في الزر */
+  padding: 12px 25px; /* إضافة حشو داخل الزر */
+  border-radius: 50px; /* منح الزر حواف دائرية */
+  text-decoration: none; /* إزالة الخط السفلي من النص */
+  transition: background 0.3s ease, transform 0.2s ease; /* إضافة تأثير عند التفاعل مع الزر */
+}
+
+.package-btn:hover {
+  background-color: rgb(120, 95, 55); /* تغيير لون الزر عند المرور عليه */
+  transform: scale(1.05); /* تكبير الزر قليلاً عند المرور عليه */
+}
+
+.package-card:hover {
+  transform: translateY(-5px); /* رفع البطاقة قليلاً عند التفاعل معها */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* إضافة ظل أعمق للبطاقة عند التفاعل */
+}
+
+@media (max-width: 768px) {
+  /* ضبط حجم الخطوط للأجهزة المحمولة */
+  .packages-heading {
+    font-size: 2.2em; /* تقليل حجم عنوان الحزم للأجهزة الصغيرة */
+  }
+
+  .packages-intro {
+    font-size: 1.1em; /* تقليل حجم النص التمهيدي */
+    margin-bottom: 30px; /* إضافة مسافة أسفل النص */
+  }
+
+  .packages-container {
+    grid-template-columns: 1fr; /* جعل الأعمدة عمودية بدلاً من أفقية */
+    padding: 0 10px; /* إضافة حشو جانبي */
+  }
+
+  .package-card {
+    padding: 20px; /* تقليل الحشو داخل البطاقة */
+    margin-bottom: 20px; /* إضافة مسافة أسفل البطاقة */
+  }
+
+  .package-card h3 {
+    font-size: 1.6em; /* تقليل حجم الخط في العنوان داخل البطاقة */
+  }
+
+  .package-card p {
+    font-size: 1em; /* تقليل حجم الخط في النص داخل البطاقة */
+  }
+
+  .package-btn {
+    font-size: 1em; /* تقليل حجم الخط في الزر */
+    padding: 10px 20px; /* تقليل الحشو داخل الزر */
+  }
+}
+
+/* قسم البطل للجولف */
+.golf-hero {
+  background: url('golffffffff.avif') center/cover no-repeat; /* تعيين صورة الخلفية لقسم الجولف */
+  height: 90vh; /* تعيين ارتفاع القسم ليأخذ 90% من ارتفاع الشاشة */
+  display: flex; /* استخدام Flexbox لترتيب العناصر داخل القسم */
+  flex-direction: column; /* ترتيب العناصر عموديًا */
+  justify-content: center; /* محاذاة المحتوى في منتصف القسم */
+  align-items: center; /* محاذاة العناصر أفقياً في المنتصف */
+  text-align: center; /* محاذاة النصوص في المنتصف */
+  color: white; /* تعيين لون النص باللون الأبيض */
+  padding: 20px; /* إضافة حشو داخل القسم */
+  background-blend-mode: overlay; /* دمج الخلفية بشكل-overlay */
+  background-color: rgba(0, 0, 0, 0.4); /* إضافة طبقة خلفية مظلمة مع شفافية */
+}
+
+.golf-heading {
+  font-size: 3em; /* تعيين حجم الخط في العنوان الرئيسي */
+  font-weight: bold; /* جعل الخط عريضًا */
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.3); /* إضافة ظل للنص */
+}
+
+.golf-subtext {
+  font-size: 1.5em; /* تعيين حجم الخط للنص الفرعي */
+  max-width: 700px; /* تحديد أقصى عرض للنص */
+  margin-top: 10px; /* إضافة مسافة من الأعلى */
+}
+
+/* قسم مرافق الجولف */
+.golf-facilities {
+  text-align: center; /* محاذاة النصوص إلى المنتصف */
+  padding: 80px 20px; /* إضافة حشو داخلي */
+}
+
+.facility-container {
+  display: flex; /* استخدام Flexbox لترتيب العناصر */
+  flex-wrap: wrap; /* السماح للعناصر بالانتقال إلى السطر التالي عند الحاجة */
+  justify-content: center; /* محاذاة العناصر في المنتصف */
+  gap: 30px; /* إضافة مسافة بين العناصر */
+  margin-top: 40px; /* إضافة مسافة من الأعلى */
+}
+
+.facility-card {
+  background: white; /* تعيين خلفية بيضاء للبطاقة */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* إضافة ظل للبطاقة */
+  padding: 20px; /* إضافة حشو داخل البطاقة */
+  border-radius: 10px; /* جعل الزوايا دائرية */
+  max-width: 300px; /* تحديد الحد الأقصى لعرض البطاقة */
+  text-align: center; /* محاذاة النص داخل البطاقة */
+  transition: transform 0.3s ease; /* إضافة تأثير عند التفاعل مع البطاقة */
+}
+
+.facility-card:hover {
+  transform: scale(1.05); /* تكبير البطاقة عند التمرير فوقها لإضافة تأثير تفاعلي */
+}
+
+.facility-card img {
+  width: 100%; /* جعل الصورة تأخذ عرض البطاقة بالكامل */
+  border-radius: 10px; /* جعل الزوايا دائرية للصورة */
+}
+
+.facility-card h3 {
+  margin-top: 15px; /* إضافة مسافة من الأعلى بين العنوان وبقية المحتوى */
+  font-size: 1.5em; /* تعيين حجم الخط في العنوان داخل البطاقة */
+  color: rgb(140, 115, 67); /* تعيين لون العنوان بلون مميز (اللون الرئيسي) */
+}
+
+/* قسم حزم الجولف */
+.golf-packages {
+  background: linear-gradient(135deg, rgb(140, 115, 67), rgb(120, 95, 55)); /* إضافة خلفية متدرجة من اللون الرئيسي */
+  text-align: center; /* محاذاة النص في المنتصف */
+  padding: 80px 20px; /* إضافة حشو داخلي لتوسيع المسافة داخل القسم */
+  color: white; /* تعيين لون النص باللون الأبيض ليكون واضحًا فوق الخلفية */
+}
+
+.golf-btn {
+  display: inline-block; /* عرض الزر ككتلة مدمجة */
+  padding: 20px 30px; /* إضافة حشو داخلي للزر لجعله أكبر */
+  border-radius: 50px; /* جعل الزر دائريًا مع حواف ناعمة */
+  text-decoration: none; /* إزالة أي تزيين للنص (مثل الخط السفلي) */
+  font-weight: bold; /* جعل النص داخل الزر عريضًا */
+  transition: 0.3s ease; /* إضافة تأثير انتقال عند التفاعل مع الزر */
+  font-size: 18px; /* تعيين حجم الخط في الزر */
+  background: rgb(140, 115, 67); /* تعيين خلفية الزر باللون الرئيسي */
+  color: white; /* تعيين لون النص داخل الزر باللون الأبيض */
+}
+
+.golf-btn:hover {
+   background: white; /* تغيير الخلفية إلى اللون الأبيض عند التمرير فوق الزر */
+  color: rgb(140, 115, 67); /* تغيير لون النص إلى اللون الرئيسي عند التمرير فوق الزر */
+}
+.explore-pack {
+  display: inline-block; /* عرض العنصر ككتلة مدمجة */
+  padding: 25px 25px; /* إضافة حشو داخلي حول الزر */
+  border-radius: 50px; /* جعل الزر ذو حواف دائرية */
+  text-decoration: none; /* إزالة التزيين من النص (مثل الخط السفلي) */
+  font-weight: bold; /* جعل النص داخل الزر عريضًا */
+  transition: 0.3s ease; /* إضافة تأثير انتقال ناعم عند التفاعل مع الزر */
+  font-size: 20px; /* تعيين حجم الخط داخل الزر */
+  background: white; /* تعيين خلفية الزر باللون الأبيض */
+  color: rgb(140, 115, 67); /* تعيين لون النص باللون الرئيسي */
+  margin-top: 20px; /* إضافة مسافة من الأعلى */
+}
+
+.explore-pack:hover {
+  background: rgb(140, 115, 67); /* تغيير الخلفية إلى اللون الرئيسي عند التمرير فوق الزر */
+  color: white; /* تغيير لون النص إلى اللون الأبيض عند التمرير فوق الزر */
+}
+
+/* قسم "Call to Action" */
+.golf-cta {
+  text-align: center; /* محاذاة النص في المنتصف */
+  padding: 80px 20px; /* إضافة حشو داخلي للقسم */
+}
+
+.golf-cta h2 {
+  font-size: 2.5em; /* تعيين حجم الخط في العنوان */
+}
+
+.golf-cta p {
+  font-size: 1.3em; /* تعيين حجم الخط في الفقرة */
+  max-width: 700px; /* تعيين أقصى عرض للفقرة */
+  margin: 20px auto; /* إضافة مسافة من الأعلى والأسفل، مع محاذاة النص في المنتصف */
+}
+
+.golf-cta .golf-btn {
+  font-size: 1.3em; /* تعيين حجم الخط في الزر داخل القسم */
+}
+
+/* أسلوب مناسب للأجهزة المحمولة */
+@media (max-width: 768px) {
+  .golf-hero {
+    height: 80vh; /* تقليص ارتفاع القسم إلى 80% من الشاشة */
+    padding: 20px; /* تقليل الحشو الداخلي */
+  }
+
+  .golf-heading {
+    font-size: 2.5em; /* تقليل حجم الخط في العنوان للأجهزة المحمولة */
+  }
+
+  .golf-subtext {
+    font-size: 1.2em; /* تقليص حجم الخط في النص الفرعي */
+    max-width: 90%; /* تحديد أقصى عرض للنص الفرعي */
+  }
+
+  /* قسم المرافق في الجولف */
+  .facility-container {
+    flex-direction: column; /* ترتيب العناصر عموديًا بدلاً من أفقي */
+    align-items: center; /* محاذاة العناصر في المنتصف */
+  }
+
+  .facility-card {
+    max-width: 90%; /* جعل بطاقات المرافق تستجيب لتغيير حجم الشاشة */
+    margin-bottom: 20px; /* إضافة مسافة أسفل كل بطاقة */
+  }
+
+  /* قسم الحزم في الجولف */
+  .golf-packages h2 {
+    font-size: 2.5em; /* تعديل حجم الخط في العنوان */
+  }
+
+  .golf-btn {
+    font-size: 1.2em; /* تقليص حجم الخط في الزر */
+    padding: 15px 25px; /* تقليص الحشو الداخلي للزر */
+  }
+
+  .explore-pack {
+    font-size: 1.5em; /* تعديل حجم الخط في الزر */
+    padding: 20px 20px; /* تعديل الحشو الداخلي للزر */
+  }
+
+  /* قسم "Call to Action" */
+  .golf-cta h2 {
+    font-size: 2em; /* تقليص حجم الخط في العنوان */
+  }
+
+  .golf-cta p {
+    font-size: 1.1em; /* تقليص حجم الخط في الفقرة */
+  }
+}
+
+/* قسم Hero */
+.restaurant-hero {
+  background: url('fancy.jpeg') center/cover no-repeat; /* تعيين صورة الخلفية للقسم مع تحديد موقعها وتغطية كامل القسم */
+  height: 90vh; /* تعيين ارتفاع القسم ليكون 90% من ارتفاع نافذة المتصفح */
+  display: flex; /* استخدام Flexbox لتنظيم العناصر داخل القسم */
+  flex-direction: column; /* ترتيب العناصر عموديًا */
+  justify-content: center; /* محاذاة العناصر في المنتصف عموديًا */
+  align-items: center; /* محاذاة العناصر في المنتصف أفقيًا */
+  text-align: center; /* محاذاة النص في المنتصف */
+  color: white; /* تعيين لون النص إلى الأبيض */
+  padding: 20px; /* إضافة حشو داخلي حول العناصر */
+  background-blend-mode: overlay; /* مزج الصورة مع اللون الأسود لتوفير تأثير overlay */
+  background-color: rgba(0, 0, 0, 0.4); /* إضافة طبقة لون سوداء مع شفافية 0.4 لتحسين وضوح النص */
+}
+
+.restaurant-heading {
+  font-size: 3em; /* تعيين حجم الخط في العنوان */
+  font-weight: bold; /* جعل النص عريضًا */
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.3); /* إضافة تأثير الظل للنص لجعله أكثر وضوحًا */
+}
+
+.restaurant-subtext {
+  font-size: 1.5em; /* تعيين حجم الخط في النص الفرعي */
+  max-width: 700px; /* تحديد أقصى عرض للنص الفرعي */
+  margin-top: 10px; /* إضافة مسافة من الأعلى للنص */
+}
+
+/* قسم المطاعم */
+.restaurants, .cafes {
+  text-align: center; /* محاذاة النص في المنتصف */
+  padding: 80px 20px; /* إضافة حشو داخلي للقسم */
+}
+
+.restaurant-container, .cafe-container {
+  display: flex; /* استخدام Flexbox لترتيب العناصر داخل الحاوية */
+  flex-wrap: wrap; /* السماح للعناصر بالتفاف في حال كانت المساحة غير كافية */
+  justify-content: center; /* محاذاة العناصر في المنتصف أفقيًا */
+  gap: 30px; /* إضافة مسافة بين العناصر */
+  margin-top: 40px; /* إضافة مسافة من الأعلى */
+}
+
+.restaurant-card, .cafe-card {
+  background: white; /* تعيين الخلفية إلى اللون الأبيض */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* إضافة تأثير الظل لجعل البطاقة تبدو مرتفعة قليلاً */
+  padding: 20px; /* إضافة حشو داخلي داخل البطاقة */
+  border-radius: 10px; /* إضافة حواف دائرية للبطاقة */
+  max-width: 300px; /* تحديد أقصى عرض للبطاقة */
+  text-align: center; /* محاذاة النص في المنتصف داخل البطاقة */
+  transition: transform 0.3s ease; /* إضافة تأثير تحول ناعم عند التفاعل مع البطاقة */
+}
+
+.restaurant-card:hover, .cafe-card:hover {
+  transform: scale(1.05); /* تكبير البطاقة عند التمرير فوقها */
+}
+
+.restaurant-card img, .cafe-card img {
+  width: 100%; /* جعل الصورة تمتد لتغطية عرض البطاقة بالكامل */
+  border-radius: 10px; /* إضافة حواف دائرية للصورة */
+}
+
+.restaurant-card h3, .cafe-card h3 {
+  margin-top: 15px; /* إضافة مسافة من الأعلى للعناوين */
+  font-size: 1.5em; /* تعيين حجم الخط في العناوين */
+  color: rgb(140, 115, 67); /* تعيين لون العنوان إلى اللون الرئيسي */
+}
+
+/* قسم Call to Action */
+.restaurant-cta {
+  background: linear-gradient(135deg, rgb(140, 115, 67), rgb(120, 95, 55)); /* إضافة تدرج لوني في الخلفية */
+  text-align: center; /* محاذاة النص في المنتصف */
+  padding: 80px 20px; /* إضافة حشو داخلي للقسم */
+  color: white; /* تعيين لون النص إلى الأبيض */
+}
+
+.restaurant-btn {
+  display: inline-block; /* عرض الزر ككتلة مدمجة */
+  background: white; /* تعيين خلفية الزر إلى اللون الأبيض */
+  color: rgb(140, 115, 67); /* تعيين لون النص داخل الزر إلى اللون الرئيسي */
+  padding: 23px 25px; /* إضافة حشو داخلي للزر */
+  border-radius: 50px; /* جعل الزر ذو حواف دائرية */
+  text-decoration: none; /* إزالة التزيين من النص */
+  font-weight: bold; /* جعل النص داخل الزر عريضًا */
+  transition: 0.3s ease; /* إضافة تأثير انتقال ناعم عند التفاعل مع الزر */
+  font-size: 17px; /* تعيين حجم الخط داخل الزر */
+}
+
+.restaurant-btn:hover {
+  background: rgb(140, 115, 67); /* تغيير خلفية الزر إلى اللون الرئيسي عند التمرير فوقه */
+  color: white; /* تغيير لون النص داخل الزر إلى الأبيض */
+}
+
+/* التصميم المتجاوب */
+@media (max-width: 1024px) {
+  .restaurant-heading {
+    font-size: 2.5em; /* تقليل حجم الخط في العنوان عند عرض الصفحة على شاشات أصغر من 1024 بكسل */
+  }
+  .restaurant-subtext {
+    font-size: 1.3em; /* تقليل حجم النص الفرعي */
+  }
+  .restaurant-card, .cafe-card {
+    max-width: 280px; /* تقليل عرض البطاقات عند عرض الصفحة على شاشات أصغر */
+  }
+}
+
+@media (max-width: 768px) {
+  .restaurant-hero {
+    height: 70vh; /* تقليل ارتفاع قسم Hero عند عرض الصفحة على شاشات أصغر من 768 بكسل */
+    padding: 15px; /* تقليل الحشو داخل القسم */
+  }
+  .restaurant-heading {
+    font-size: 2em; /* تقليل حجم الخط في العنوان */
+  }
+  .restaurant-subtext {
+    font-size: 1.1em; /* تقليل حجم النص الفرعي */
+  }
+  .restaurant-container, .cafe-container {
+    flex-direction: column; /* جعل ترتيب العناصر عموديًا بدلاً من أفقيًا */
+    align-items: center; /* محاذاة العناصر في المنتصف عموديًا */
+  }
+  .restaurant-card, .cafe-card {
+    max-width: 90%; /* جعل البطاقات قابلة للتكيف مع حجم الشاشة وتقليل عرضها إلى 90% */
+  }
+}
+
+@media (max-width: 480px) {
+  .restaurant-heading {
+    font-size: 1.8em; /* تقليل حجم الخط في العنوان أكثر على الشاشات الصغيرة */
+  }
+  .restaurant-subtext {
+    font-size: 1em; /* تقليل حجم النص الفرعي */
+  }
+  .restaurant-btn {
+    padding: 15px 20px; /* تقليل الحشو داخل الزر */
+    font-size: 15px; /* تقليل حجم الخط داخل الزر */
+  }
+}
+
+/* قسم Hero */
+.rooms-hero {
+  background: url('rooms\ 1.jpg') center/cover no-repeat; /* تعيين صورة الخلفية للقسم مع تحديد موقعها وتغطية كامل القسم */
+  height: 90vh; /* تعيين ارتفاع القسم ليكون 90% من ارتفاع نافذة المتصفح */
+  display: flex; /* استخدام Flexbox لتنظيم العناصر داخل القسم */
+  flex-direction: column; /* ترتيب العناصر عموديًا */
+  justify-content: center; /* محاذاة العناصر في المنتصف عموديًا */
+  align-items: center; /* محاذاة العناصر في المنتصف أفقيًا */
+  text-align: center; /* محاذاة النص في المنتصف */
+  color: white; /* تعيين لون النص إلى الأبيض */
+  padding: 20px; /* إضافة حشو داخلي حول العناصر */
+  background-blend-mode: overlay; /* مزج الصورة مع اللون الأسود لتوفير تأثير overlay */
+  background-color: rgba(0, 0, 0, 0.4); /* إضافة طبقة لون سوداء مع شفافية 0.4 لتحسين وضوح النص */
+}
+
+.rooms-heading {
+  font-size: 3em; /* تعيين حجم الخط في العنوان */
+  font-weight: bold; /* جعل النص عريضًا */
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.3); /* إضافة تأثير الظل للنص لجعله أكثر وضوحًا */
+}
+
+.rooms-subtext {
+  font-size: 1.5em; /* تعيين حجم الخط في النص الفرعي */
+  max-width: 700px; /* تحديد أقصى عرض للنص الفرعي */
+  margin-top: 10px; /* إضافة مسافة من الأعلى للنص */
+}
+
+/* خيارات الغرف */
+.room-options {
+  text-align: center; /* محاذاة النص في المنتصف */
+  padding: 80px 20px; /* إضافة حشو داخلي للقسم */
+}
+
+.room-container {
+  display: flex; /* استخدام Flexbox لترتيب العناصر داخل الحاوية */
+  flex-wrap: wrap; /* السماح للعناصر بالتفاف في حال كانت المساحة غير كافية */
+  justify-content: center; /* محاذاة العناصر في المنتصف أفقيًا */
+  gap: 30px; /* إضافة مسافة بين العناصر */
+  margin-top: 40px; /* إضافة مسافة من الأعلى */
+}
+
+.room-card {
+  background: white; /* تعيين الخلفية إلى اللون الأبيض */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* إضافة تأثير الظل لجعل البطاقة تبدو مرتفعة قليلاً */
+  padding: 20px; /* إضافة حشو داخلي داخل البطاقة */
+  border-radius: 10px; /* إضافة حواف دائرية للبطاقة */
+  max-width: 300px; /* تحديد أقصى عرض للبطاقة */
+  text-align: center; /* محاذاة النص في المنتصف داخل البطاقة */
+  transition: transform 0.3s ease; /* إضافة تأثير تحول ناعم عند التفاعل مع البطاقة */
+}
+
+/* تأثير التحويم على بطاقة الغرفة */
+.room-card:hover {
+  transform: scale(1.05); /* عند التفاعل مع البطاقة، يتم تكبيرها بنسبة 5% لجذب الانتباه */
+}
+
+/* تنسيق الصورة داخل بطاقة الغرفة */
+.room-card img {
+  width: 100%; /* جعل الصورة تأخذ كامل عرض البطاقة */
+  border-radius: 10px; /* إضافة حواف دائرية للصورة */
+}
+
+/* تنسيق عنوان بطاقة الغرفة */
+.room-card h3 {
+  margin-top: 15px; /* إضافة مسافة من الأعلى للعناوين */
+  font-size: 1.5em; /* تعيين حجم الخط للعناوين */
+  color: rgb(140, 115, 67); /* تحديد لون العنوان */
+}
+
+/* تنسيق سعر الغرفة */
+.price {
+  display: block; /* جعل السعر يظهر كعنصر مستقل */
+  margin-top: 10px; /* إضافة مسافة من الأعلى للسعر */
+  font-size: 1.2em; /* تعيين حجم الخط للسعر */
+  font-weight: bold; /* جعل النص عريضًا */
+  color: rgb(140, 115, 67); /* تحديد لون السعر */
+}
+
+/* قسم المرافق */
+.room-amenities {
+  background: url('background\ golf\ resort.jpg') center/cover no-repeat; /* تعيين صورة الخلفية مع تغطية القسم */
+  padding: 80px 20px; /* إضافة حشو داخلي للقسم */
+  text-align: center; /* محاذاة النص في المنتصف */
+  color: white; /* تحديد لون النص باللون الأبيض */
+  background-blend-mode: overlay; /* مزج الصورة مع اللون الخلفي */
+  background-color: rgba(0, 0, 0, 0.5); /* إضافة طبقة شفافة فوق الصورة لتقليل التأثير */
+}
+
+/* تنسيق عنوان قسم المرافق */
+.room-amenities h2 {
+  font-size: 2.5em; /* تعيين حجم الخط لعناوين القسم */
+  margin-bottom: 30px; /* إضافة مسافة أسفل العنوان */
+  text-transform: uppercase; /* تحويل النص إلى أحرف كبيرة */
+  letter-spacing: 1px; /* زيادة المسافة بين الأحرف */
+}
+
+/* تنسيق شبكة المرافق */
+.amenities-grid {
+  display: grid; /* استخدام شبكة لتوزيع المرافق */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* جعل الأعمدة تتكيف مع الحجم */
+  gap: 30px; /* إضافة مسافة بين العناصر */
+  max-width: 1000px; /* تعيين أقصى عرض للشبكة */
+  margin: auto; /* محاذاة الشبكة في المنتصف */
+}
+
+/* تنسيق بطاقة كل ميزة */
+.amenity-item {
+  background: rgba(255, 255, 255, 0.1); /* خلفية شفافة للبطاقة */
+  padding: 20px; /* إضافة حشو داخلي للبطاقة */
+  border-radius: 15px; /* إضافة حواف دائرية للبطاقة */
+  text-align: center; /* محاذاة النص داخل البطاقة */
+  transition: 0.3s ease-in-out; /* إضافة تأثير انتقال ناعم عند التفاعل مع البطاقة */
+}
+
+/* تأثير التحويم على بطاقة الميزة */
+.amenity-item:hover {
+  background: rgba(255, 255, 255, 0.2); /* تغيير الخلفية عند التحويم */
+  transform: translateY(-5px); /* رفع البطاقة قليلاً عند التحويم */
+}
+
+/* تنسيق الأيقونات داخل بطاقة الميزة */
+.amenity-item i {
+  font-size: 2em; /* تعيين حجم الأيقونة */
+  margin-bottom: 10px; /* إضافة مسافة أسفل الأيقونة */
+  color: rgb(140, 115, 67); /* تحديد لون الأيقونة */
+}
+
+/* تنسيق عنوان كل ميزة */
+.amenity-item h3 {
+  font-size: 1.4em; /* تعيين حجم الخط للعناوين */
+  margin-bottom: 10px; /* إضافة مسافة أسفل العنوان */
+}
+
+/* تنسيق وصف كل ميزة */
+.amenity-item p {
+  font-size: 1em; /* تعيين حجم الخط للوصف */
+  opacity: 0.9; /* جعل الوصف أقل شفافية قليلاً */
+}
+
+/* قسم Call to Action */
+.rooms-cta {
+  background: linear-gradient(135deg, rgb(140, 115, 67), rgb(120, 95, 55)); /* خلفية بتدرج لوني */
+  text-align: center; /* محاذاة النص في المنتصف */
+  padding: 80px 20px; /* إضافة حشو داخلي للقسم */
+  color: white; /* تحديد لون النص باللون الأبيض */
+}
+
+/* تنسيق الزر داخل قسم Call to Action */
+.rooms-btn {
+  display: inline-block; /* جعل الزر عنصرًا متجاورًا */
+  background: white; /* تعيين خلفية الزر إلى الأبيض */
+  color: rgb(140, 115, 67); /* تعيين لون النص داخل الزر */
+  padding: 20px 25px; /* إضافة حشو داخلي للزر */
+  font-size: 20px; /* تعيين حجم الخط داخل الزر */
+  border-radius: 50px; /* إضافة حواف دائرية للزر */
+  text-decoration: none; /* إزالة أي خط تحت النص */
+  font-weight: bold; /* جعل النص عريضًا */
+  transition: 0.3s ease; /* إضافة تأثير انتقال ناعم عند التفاعل مع الزر */
+}
+
+/* تأثير التحويم على الزر */
+.rooms-btn:hover {
+  background: rgb(140, 115, 67); /* تغيير خلفية الزر عند التحويم */
+  color: white; /* تغيير لون النص إلى الأبيض عند التحويم */
+}
+
+/* التصميم المتجاوب */
+@media (max-width: 1024px) {
+  .rooms-hero {
+    height: 70vh; /* تقليل ارتفاع قسم Hero على الشاشات الأصغر من 1024 بكسل */
+    padding: 15px; /* تقليل الحشو الداخلي */
+  }
+
+  .rooms-heading {
+    font-size: 2.5em; /* تقليل حجم الخط في العنوان */
+  }
+
+  .rooms-subtext {
+    font-size: 1.2em; /* تقليل حجم الخط في النص الفرعي */
+  }
+
+  .room-container {
+    flex-direction: column; /* جعل ترتيب العناصر عموديًا */
+    align-items: center; /* محاذاة العناصر في المنتصف عموديًا */
+  }
+
+  .room-card {
+    max-width: 90%; /* جعل عرض البطاقة 90% على الشاشات الأصغر */
+  }
+}
+
+@media (max-width: 768px) {
+  .rooms-hero {
+    height: 60vh; /* تقليل ارتفاع قسم Hero أكثر على الشاشات الأصغر من 768 بكسل */
+    padding: 10px; /* تقليل الحشو الداخلي */
+  }
+
+  .rooms-heading {
+    font-size: 2em; /* تقليل حجم الخط في العنوان */
+  }
+
+  .rooms-subtext {
+    font-size: 1em; /* تقليل حجم الخط في النص الفرعي */
+  }
+
+  .room-options h2,
+  .room-amenities h2,
+  .rooms-cta h2 {
+    font-size: 2em; /* تقليل حجم الخط في العناوين الفرعية */
+  }
+
+  .amenities-grid {
+    grid-template-columns: 1fr; /* جعل العناصر في شبكة المرافق تأخذ عمودًا واحدًا */
+  }
+}
+
+@media (max-width: 480px) {
+  .rooms-hero {
+    height: 50vh; /* تقليل ارتفاع قسم Hero أكثر على الشاشات الصغيرة */
+  }
+
+  .rooms-heading {
+    font-size: 1.8em; /* تقليل حجم الخط في العنوان */
+  }
+
+  .rooms-subtext {
+    font-size: 0.9em; /* تقليل حجم الخط في النص الفرعي */
+  }
+
+  .room-card {
+    max-width: 100%; /* جعل عرض البطاقة 100% لتناسب الشاشات الصغيرة */
+    padding: 15px; /* تقليل الحشو الداخلي في البطاقة */
+  }
+
+  .rooms-btn {
+    padding: 15px 20px; /* تقليل الحشو الداخلي في الزر */
+    font-size: 16px; /* تقليل حجم الخط في الزر */
+  }
+}
+
+/* قسم Hero */
+.gym-hero {
+  background: url('gym\ 77.png') center/cover no-repeat; /* تعيين صورة الخلفية للقسم مع تغطية الخلفية */
+  height: 100vh; /* تعيين ارتفاع القسم ليغطي كامل الشاشة */
+  display: flex; /* استخدام Flexbox لتنظيم العناصر داخل القسم */
+  flex-direction: column; /* ترتيب العناصر عموديًا */
+  justify-content: center; /* محاذاة العناصر في المنتصف عموديًا */
+  align-items: center; /* محاذاة العناصر في المنتصف أفقيًا */
+  text-align: center; /* محاذاة النص في المنتصف */
+  color: white; /* تحديد لون النص باللون الأبيض */
+  background-blend-mode: overlay; /* مزج الخلفية مع اللون العلوي بشكل مدمج */
+  background-color: rgba(0, 0, 0, 0.5); /* إضافة طبقة شفافة داكنة فوق الصورة لتحسين الوضوح */
+  padding: 20px; /* إضافة حشو داخلي للقسم */
+}
+
+/* تنسيق عنوان قسم Hero */
+.gym-hero h1 {
+  font-size: 3em; /* تعيين حجم الخط كبيرًا للعناوين */
+  font-weight: bold; /* جعل النص عريضًا */
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.3); /* إضافة ظل للنص لجعل العنوان بارزًا */
+}
+
+/* تنسيق النص الفرعي في قسم Hero */
+.gym-hero p {
+  font-size: 1.5em; /* تعيين حجم الخط للنص الفرعي */
+  margin-top: 10px; /* إضافة مسافة من الأعلى للنص */
+}
+
+/* قسم المزايا */
+.gym-section {
+  text-align: center; /* محاذاة النص في المنتصف */
+  padding: 80px 10%; /* إضافة حشو داخلي مع نسبة مئوية من الجوانب */
+  background: linear-gradient(to bottom, #f5f5f5, white); /* استخدام تدرج لوني من الأعلى للأسفل */
+}
+
+/* تنسيق عنوان قسم المزايا */
+.gym-header h2 {
+  font-size: 2.5em; /* تعيين حجم الخط للعناوين */
+  color: rgb(140, 115, 67); /* تحديد لون العنوان */
+  margin-bottom: 10px; /* إضافة مسافة أسفل العنوان */
+}
+
+/* تنسيق النص في قسم المزايا */
+.gym-header p {
+  font-size: 1.2em; /* تعيين حجم الخط للنص */
+  max-width: 700px; /* تحديد أقصى عرض للنص */
+  margin: 0 auto 40px; /* محاذاة النص في المنتصف مع مسافة أسفل النص */
+  color: #555; /* تحديد لون النص */
+}
+
+/* تصميم شبكة المزايا */
+.gym-grid {
+  display: grid; /* استخدام شبكة لتوزيع العناصر */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* جعل الأعمدة تتكيف مع الحجم */
+  gap: 30px; /* إضافة مسافة بين العناصر */
+}
+
+/* تصميم بطاقة الميزة */
+.gym-card {
+  background: white; /* تعيين خلفية البطاقة باللون الأبيض */
+  padding: 25px; /* إضافة حشو داخلي للبطاقة */
+  border-radius: 15px; /* إضافة حواف دائرية للبطاقة */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف للبطاقة */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* إضافة تأثير ناعم عند التفاعل مع البطاقة */
+}
+
+/* تنسيق الصورة داخل بطاقة الميزة */
+.gym-card img {
+  width: 100%; /* جعل الصورة تأخذ كامل عرض البطاقة */
+  height: 200px; /* تعيين ارتفاع ثابت للصورة */
+  object-fit: cover; /* ملاءمة الصورة ضمن البطاقة بشكل مناسب */
+  border-radius: 10px; /* إضافة حواف دائرية للصورة */
+  margin-bottom: 15px; /* إضافة مسافة أسفل الصورة */
+}
+
+/* تنسيق عنوان بطاقة الميزة */
+.gym-card h3 {
+  font-size: 1.5em; /* تعيين حجم الخط للعناوين */
+  color: rgb(140, 115, 67); /* تحديد لون العنوان */
+  margin-bottom: 10px; /* إضافة مسافة أسفل العنوان */
+}
+
+/* تنسيق وصف بطاقة الميزة */
+.gym-card p {
+  font-size: 1.1em; /* تعيين حجم الخط للوصف */
+  color: #444; /* تحديد لون النص للوصف */
+}
+
+/* تأثير التحويم على بطاقة الميزة */
+.gym-card:hover {
+  transform: translateY(-5px); /* رفع البطاقة قليلاً عند التحويم */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* زيادة الظل لجعل البطاقة تبرز عند التحويم */
+}
+
+/* قسم Call to Action */
+.gym-cta {
+  text-align: center; /* محاذاة النص في المنتصف */
+  padding: 80px 20px; /* إضافة حشو داخلي للقسم */
+  background: linear-gradient(135deg, rgb(140, 115, 67), rgb(120, 95, 55)); /* تدرج لوني لخلفية الزر */
+  color: white; /* تحديد لون النص باللون الأبيض */
+}
+
+/* تنسيق عنوان قسم Call to Action */
+.gym-cta h2 {
+  font-size: 2.5em; /* تعيين حجم الخط للعناوين */
+  margin-bottom: 20px; /* إضافة مسافة أسفل العنوان */
+}
+
+/* تصميم الزر في قسم Call to Action */
+.cta-button {
+  display: inline-block; /* جعل الزر عنصرًا متجاورًا */
+  background-color: white; /* تعيين خلفية الزر إلى الأبيض */
+  color: rgb(140, 115, 67); /* تعيين لون النص داخل الزر */
+  font-size: 1.3em; /* تعيين حجم الخط داخل الزر */
+  font-weight: bold; /* جعل النص داخل الزر عريضًا */
+  padding: 18px 40px; /* إضافة حشو داخلي للزر */
+  border-radius: 50px; /* إضافة حواف دائرية للزر */
+  text-decoration: none; /* إزالة أي خط تحت النص */
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease; /* إضافة تأثيرات ناعمة للزر عند التحويم */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* إضافة ظل خفيف للزر */
+}
+
+/* تأثير التحويم على الزر */
+.cta-button:hover {
+  background-color: rgb(140, 115, 67); /* تغيير الخلفية إلى اللون المميز عند التحويم */
+  color: white; /* تغيير لون النص إلى الأبيض */
+  transform: scale(1.05); /* تكبير الزر قليلاً عند التحويم لجذب الانتباه */
+}
+/* التصميم المتجاوب - ميديا استعلام (لأحجام الشاشات الصغيرة) */
+@media (max-width: 768px) {
+  .gym-hero {
+    height: 70vh; /* تقليل ارتفاع القسم Hero على الشاشات الصغيرة */
+    padding: 15px; /* تقليل الحشو الداخلي للقسم Hero */
+  }
+
+  .gym-hero h1 {
+    font-size: 2.2em; /* تقليل حجم الخط للعناوين */
+  }
+
+  .gym-hero p {
+    font-size: 1.2em; /* تقليل حجم الخط للنصوص */
+  }
+
+  .gym-header h2 {
+    font-size: 2em; /* تقليل حجم الخط لعناوين القسم */
+  }
+
+  .gym-header p {
+    font-size: 1em; /* تقليل حجم الخط للنصوص في القسم */
+  }
+
+  .gym-card {
+    padding: 20px; /* تقليل الحشو الداخلي لبطاقات المزايا */
+  }
+
+  .gym-card h3 {
+    font-size: 1.3em; /* تقليل حجم الخط لعناوين البطاقة */
+  }
+
+  .gym-card p {
+    font-size: 1em; /* تقليل حجم الخط لوصف البطاقة */
+  }
+
+  .gym-cta {
+    padding: 60px 15px; /* تقليل الحشو الداخلي في قسم Call to Action */
+  }
+
+  .gym-cta h2 {
+    font-size: 2em; /* تقليل حجم الخط للعنوان في قسم Call to Action */
+  }
+
+  .cta-button {
+    font-size: 1.2em; /* تقليل حجم الخط في الزر */
+    padding: 15px 30px; /* تقليل الحشو الداخلي للزر */
+  }
+}
+
+/* التصميم المتجاوب - ميديا استعلام (لأحجام الشاشات الأصغر) */
+@media (max-width: 480px) {
+  .gym-hero {
+    height: 60vh; /* تقليل ارتفاع القسم Hero بشكل أكبر */
+  }
+
+  .gym-hero h1 {
+    font-size: 2em; /* تقليل حجم الخط للعناوين بشكل أكبر */
+  }
+
+  .gym-hero p {
+    font-size: 1em; /* تقليل حجم الخط للنصوص بشكل أكبر */
+  }
+
+  .gym-header h2 {
+    font-size: 1.8em; /* تقليل حجم الخط للعناوين في قسم المزايا */
+  }
+
+  .gym-header p {
+    font-size: 0.9em; /* تقليل حجم الخط للنصوص في قسم المزايا */
+  }
+
+  .gym-grid {
+    gap: 20px; /* تقليل المسافة بين العناصر في الشبكة */
+  }
+
+  .gym-card {
+    padding: 15px; /* تقليل الحشو الداخلي لبطاقات المزايا */
+  }
+
+  .gym-card h3 {
+    font-size: 1.2em; /* تقليل حجم الخط لعناوين البطاقة */
+  }
+
+  .gym-card p {
+    font-size: 0.9em; /* تقليل حجم الخط لوصف البطاقة */
+  }
+
+  .gym-cta {
+    padding: 50px 10px; /* تقليل الحشو الداخلي في قسم Call to Action */
+  }
+
+  .gym-cta h2 {
+    font-size: 1.8em; /* تقليل حجم الخط للعنوان في قسم Call to Action */
+  }
+
+  .cta-button {
+    font-size: 1em; /* تقليل حجم الخط في الزر */
+    padding: 12px 25px; /* تقليل الحشو الداخلي للزر */
+  }
+}
+
+/* قسم Hero */
+.hero {
+  position: relative; /* تعيين الموضع النسبي للقسم */
+  height: 90vh; /* تعيين ارتفاع القسم Hero ليغطي 90% من الشاشة */
+  background: url('golf\ resort\ background\ image.jpg') center/cover no-repeat; /* تعيين صورة الخلفية للقسم */
+  display: flex; /* استخدام Flexbox لتنظيم العناصر */
+  align-items: center; /* محاذاة العناصر عموديًا في المنتصف */
+  justify-content: center; /* محاذاة العناصر أفقيًا في المنتصف */
+  text-align: center; /* محاذاة النص في المنتصف */
+  color: white; /* تعيين لون النص إلى الأبيض */
+  padding: 20px; /* إضافة حشو داخلي للقسم */
+}
+
+/* طبقة التظليل في قسم Hero */
+.hero-overlay {
+  position: absolute; /* تعيين الطبقة كعنصر مطلق */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* إضافة طبقة شفافة داكنة فوق الخلفية */
+}
+
+/* محتوى قسم Hero */
+.hero-content {
+  position: relative; /* تعيين المحتوى ليكون فوق الطبقة التظليل */
+  z-index: 2; /* جعل المحتوى يظهر فوق التظليل */
+  max-width: 800px; /* تحديد الحد الأقصى لعرض المحتوى */
+}
+
+/* تنسيق عنوان قسم Hero */
+.hero h1 {
+  color: antiquewhite; /* تعيين لون العنوان إلى لون أبيض قديم */
+  font-size: 3.5em; /* تعيين حجم الخط كبيرًا */
+  font-weight: bold; /* جعل النص عريضًا */
+  margin-bottom: 35px; /* إضافة مسافة أسفل العنوان */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* إضافة ظل للنص لجعل العنوان بارزًا */
+}
+
+/* تنسيق النص في قسم Hero */
+.hero p {
+  font-size: 1.5em; /* تعيين حجم الخط للنص */
+  margin-bottom: 20px; /* إضافة مسافة أسفل النص */
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3); /* إضافة ظل للنص لجعل النص بارزًا */
+  color: antiquewhite; /* تعيين لون النص إلى لون أبيض قديم */
+}
+
+/* قسم حول */
+.about-section {
+  padding: 100px 20px; /* إضافة حشو داخلي للقسم */
+  background: #f8f8f8; /* تعيين خلفية القسم بلون فاتح */
+  padding-top: 100px;
+  padding-bottom: 100px;
+  margin-bottom: 100px; /* إضافة مسافة أسفل القسم */
+}
+
+/* تصميم الحاوية في قسم حول */
+.about-container {
+  display: flex; /* استخدام Flexbox لتنظيم العناصر */
+  flex-wrap: wrap; /* السماح للعناصر بالتفاف في حال كانت الشاشات صغيرة */
+  align-items: center; /* محاذاة العناصر عموديًا في المنتصف */
+  justify-content: space-between; /* توزيع العناصر بالتساوي بين المسافات */
+  max-width: 1200px; /* تحديد الحد الأقصى لعرض الحاوية */
+  margin: auto; /* محاذاة الحاوية في المنتصف */
+}
+
+/* تنسيق النص في قسم حول */
+.about-text {
+  flex: 1; /* السماح للنص بالتمدد ليأخذ المساحة المتاحة */
+  max-width: 600px; /* تحديد الحد الأقصى لعرض النص */
+  text-align: left; /* محاذاة النص إلى اليسار */
+  animation: fadeInLeft 1s ease-in-out; /* إضافة تأثير التحريك للنص عند تحميل الصفحة */
+}
+
+/* تنسيق العنوان في قسم حول */
+.about-text h2 {
+  font-size: 2.8em; /* تعيين حجم الخط كبيرًا */
+  color: rgb(140, 115, 67); /* تحديد لون العنوان */
+  margin-bottom: 20px; /* إضافة مسافة أسفل العنوان */
+}
+
+/* تنسيق العنوان الفرعي في قسم حول */
+.about-text h3 {
+  font-size: 2em; /* تعيين حجم الخط للعناوين الفرعية */
+  color: rgb(120, 95, 55); /* تحديد لون العنوان الفرعي */
+}
+
+/* تنسيق النص في قسم حول */
+.about-text p {
+  font-size: 17px; /* تعيين حجم الخط للنص */
+  color: #555; /* تحديد لون النص */
+  line-height: 1.6; /* تعيين تباعد الأسطر */
+  margin-bottom: 15px; /* إضافة مسافة أسفل النص */
+}
+
+/* تنسيق الصورة في قسم حول */
+.about-image {
+  flex: 1; /* السماح للصورة بالتمدد لتأخذ المساحة المتاحة */
+  max-width: 500px; /* تحديد الحد الأقصى لعرض الصورة */
+  text-align: center; /* محاذاة الصورة في المنتصف */
+}
+
+/* تصميم الصورة في قسم "عن المنتجع" */
+.about-image img {
+  width: 100%; /* تجعل الصورة تملأ العرض بالكامل */
+  border-radius: 10px; /* إضافة حواف مستديرة للصورة */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* إضافة ظل خفيف حول الصورة */
+  animation: fadeInRight 1s ease-in-out; /* تأثير انسيابي عند ظهور الصورة */
+}
+
+/* قسم "المرافق" */
+.amenities-section {
+  padding: 100px 20px; /* إضافة padding من الأعلى والأسفل */
+  background: white; /* خلفية بيضاء */
+  text-align: center; /* محاذاة النص إلى المنتصف */
+  margin-bottom: 120px; /* مسافة أسفل القسم */
+}
+
+/* تصميم الحاوية للمرافق */
+.amenities-container {
+  display: grid; /* استخدام شبكة لعرض العناصر */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* تخصيص الأعمدة حسب الحجم */
+  gap: 40px; /* المسافة بين العناصر */
+  max-width: 1200px; /* تحديد أقصى عرض للحاوية */
+  margin: auto; /* محاذاة الحاوية في المنتصف */
+}
+
+/* تصميم بطاقة المرافق */
+.amenity {
+  background: #f9f9f9; /* خلفية رمادية فاتحة */
+  padding: 30px; /* مسافة داخلية */
+  border-radius: 10px; /* إضافة حواف مستديرة */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف حول البطاقة */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* تأثير التحول والظل */
+  animation: fadeInUp 1s ease-in-out; /* تأثير انسيابي عند ظهور البطاقة */
+}
+
+/* تصميم الأيقونة داخل البطاقة */
+.amenity i {
+  font-size: 3em; /* تكبير الأيقونة */
+  color: rgb(140, 115, 67); /* تغيير لون الأيقونة */
+  margin-bottom: 20px; /* مسافة أسفل الأيقونة */
+}
+
+/* تصميم العنوان في بطاقة المرافق */
+.amenity h3 {
+  font-size: 1.5em; /* تكبير حجم الخط */
+  color: rgb(120, 95, 55); /* تغيير لون العنوان */
+  margin-bottom: 10px; /* مسافة أسفل العنوان */
+}
+
+/* تصميم الفقرة داخل بطاقة المرافق */
+.amenity p {
+  font-size: 1.1em; /* تكبير حجم الخط */
+  color: #555; /* تغيير لون النص */
+  line-height: 1.6; /* زيادة تباعد الأسطر */
+}
+
+/* تأثير عند التمرير على بطاقة المرافق */
+.amenity:hover {
+  transform: translateY(-5px); /* رفع البطاقة قليلاً للأعلى */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* إضافة ظل أكبر عند التمرير */
+}
+
+/* المسافة بين الأقسام */
+.section-spacer {
+  height: 80px; /* ارتفاع المسافة */
+  background: white; /* خلفية بيضاء */
+}
+
+/* عنوان قسم "المرافق" */
+#facili-heading {
+  font-size: 2.8em; /* تكبير حجم الخط */
+  color: rgb(140, 115, 67); /* لون العنوان */
+  margin-bottom: 40px; /* مسافة أسفل العنوان */
+  text-align: center; /* محاذاة العنوان في المنتصف */
+  margin-bottom: 60px; /* مسافة أسفل العنوان */
+  margin-top: 100px; /* مسافة من الأعلى */
+}
+
+/* قسم Call to Action */
+.cta-section {
+  background: linear-gradient(135deg, rgb(140, 115, 67), rgb(120, 95, 55)); /* تدرج لوني */
+  color: white; /* نص أبيض */
+  text-align: center; /* محاذاة النص في المنتصف */
+  padding: 80px 20px; /* مسافة داخلية */
+}
+
+/* تصميم عنوان في قسم Call to Action */
+.cta-section h2 {
+  font-size: 2.5em; /* تكبير حجم الخط */
+  margin-bottom: 20px; /* مسافة أسفل العنوان */
+}
+
+/* تصميم النص في قسم Call to Action */
+.cta-section p {
+  font-size: 1.3em; /* تكبير حجم الخط */
+  margin-bottom: 30px; /* مسافة أسفل الفقرة */
+  max-width: 800px; /* تحديد الحد الأقصى للعرض */
+  margin-left: auto; /* محاذاة الفقرة لليسار */
+  margin-right: auto; /* محاذاة الفقرة لليمين */
+}
+
+/* تصميم زر Call to Action */
+.cta-button {
+  display: inline-block; /* عرض الزر كعنصر مدمج */
+  background: white; /* خلفية بيضاء */
+  color: rgb(140, 115, 67); /* لون النص */
+  padding: 15px 30px; /* مسافة داخلية */
+  font-size: 20px; /* حجم الخط */
+  font-weight: bold; /* جعل الخط عريض */
+  border-radius: 50px; /* حواف دائرية للزر */
+  text-decoration: none; /* إزالة التحديد */
+}
+
+/* تأثير عند التمرير على زر Call to Action */
+.cta-button:hover {
+  background: rgb(140, 115, 67); /* تغيير الخلفية عند التمرير */
+  color: white; /* تغيير اللون إلى الأبيض */
+}
+
+/* قسم Hero للتواصل */
+.contact-hero {
+  position: relative; /* تحديد الموقع */
+  height: 82vh; /* ارتفاع القسم */
+  background: url('contact\ 4.jpg') center/cover no-repeat; /* تعيين صورة خلفية */
+  display: flex; /* استخدام Flexbox */
+  align-items: center; /* محاذاة العناصر عمودياً */
+  justify-content: center; /* محاذاة العناصر أفقياً */
+  text-align: center; /* محاذاة النص في المنتصف */
+  color: white; /* نص أبيض */
+}
+
+/* طبقة الظل في قسم التواصل */
+.contact-overlay {
+  position: absolute; /* تحديد الموقع بشكل مطلق */
+  top: 0; /* من الأعلى */
+  left: 0; /* من اليسار */
+  width: 100%; /* عرض كامل */
+  height: 100%; /* ارتفاع كامل */
+  background: rgba(0, 0, 0, 0.5); /* ظلال داكنة لزيادة وضوح النص */
+}
+
+/* محتوى قسم التواصل */
+.contact-content {
+  position: relative; /* تحديد الموقع */
+  z-index: 2; /* تحديد ترتيب الطبقات */
+  max-width: 800px; /* أقصى عرض للمحتوى */
+  padding: 20px; /* مسافة داخلية */
+}
+
+/* عنوان محتوى قسم التواصل */
+.contact-content h1 {
+  font-size: 3em; /* تكبير حجم الخط */
+  margin-bottom: 10px; /* مسافة أسفل العنوان */
+}
+
+/* نص محتوى قسم التواصل */
+.contact-content p {
+  font-size: 1.5em; /* تكبير حجم الخط */
+}
+
+/* قسم نموذج الاتصال */
+.contact-form-section {
+  padding: 80px 20px; /* مسافة داخلية */
+  background: #f8f8f8; /* خلفية رمادية فاتحة */
+  text-align: center; /* محاذاة النص في المنتصف */
+}
+
+/* حاوية النموذج */
+.contact-container {
+  max-width: 600px; /* أقصى عرض للحاوية */
+  margin: auto; /* محاذاة الحاوية في المنتصف */
+  background: white; /* خلفية بيضاء */
+  padding: 40px; /* مسافة داخلية */
+  border-radius: 10px; /* حواف مستديرة */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* إضافة ظل خفيف */
+}
+
+/* عنوان داخل النموذج */
+.contact-container h2 {
+  font-size: 2em; /* تكبير حجم الخط */
+  color: rgb(140, 115, 67); /* لون العنوان */
+  margin-bottom: 20px; /* مسافة أسفل العنوان */
+}
+
+/* تصميم مجموعة الحقول في النموذج */
+.form-group {
+  margin-bottom: 20px; /* مسافة أسفل الحقل */
+  text-align: left; /* محاذاة النص إلى اليسار */
+}
+
+/* تصميم تسمية الحقل في النموذج */
+.form-group label {
+  display: block; /* عرض التسمية ككتلة */
+  margin-bottom: 5px; /* مسافة أسفل التسمية */
+  color: #333; /* لون التسمية */
+}
+
+/* تصميم الحقول في النموذج */
+.form-group input, .form-group textarea {
+  width: 100%; /* عرض الحقل كامل */
+  padding: 12px; /* مسافة داخلية */
+  border: 1px solid #ccc; /* حدود خفيفة */
+  border-radius: 5px; /* حواف مستديرة */
+  font-size: 1em; /* حجم الخط */
+}
+
+/* تصميم الحقل النصي (textarea) */
+.form-group textarea {
+  resize: vertical; /* تمكين تغيير الحجم عموديًا فقط */
+  min-height: 120px; /* تحديد الحد الأدنى للارتفاع */
+}
+
+/* زر الاتصال */
+.contact-btn {
+  display: inline-block; /* عرض الزر بشكل مدمج مع النص */
+  background: rgb(140, 115, 67); /* الخلفية بلون مخصص */
+  color: white; /* النص باللون الأبيض */
+  padding: 15px 30px; /* المسافة داخل الزر */
+  font-size: 1.2em; /* حجم الخط */
+  border: none; /* إزالة الحدود */
+  border-radius: 50px; /* جعل الزر دائري */
+  cursor: pointer; /* تغيير شكل المؤشر عند التمرير على الزر */
+  transition: background 0.3s ease, transform 0.3s ease; /* تأثير الانتقال عند التمرير */
+}
+
+/* عند التمرير على الزر */
+.contact-btn:hover {
+  background: rgb(120, 95, 55); /* تغيير اللون عند التمرير */
+  transform: scale(1.05); /* تكبير الزر عند التمرير */
+}
+
+/* تنسيق البيانات باللون المخصص */
+.data {
+  color: rgb(140, 115, 67);
+}
+
+/* تصميم استجابة الصفحة للهواتف */
+@media (max-width: 768px) {
+  /* قسم البطل للاتصال */
+  .contact-hero {
+    height: 60vh; /* تقليص الارتفاع على الشاشات الصغيرة */
+    background-position: center; /* توسيط الخلفية */
+  }
+
+  .contact-content h1 {
+    font-size: 2.5em; /* تقليص حجم العنوان */
+  }
+
+  .contact-content p {
+    font-size: 1.2em; /* تقليص حجم النص */
+  }
+
+  /* قسم نموذج الاتصال */
+  .contact-form-section {
+    padding: 40px 10px; /* تقليص الحشو */
+  }
+
+  .contact-container {
+    padding: 20px; /* تقليص الحشو داخل الحاوية */
+    box-shadow: none; /* إزالة الظلال */
+    border-radius: 5px; /* جعل الزوايا مستديرة */
+  }
+
+  .contact-container h2 {
+    font-size: 1.8em; /* تقليص حجم العنوان */
+  }
+
+  .form-group input, .form-group textarea {
+    font-size: 1em; /* تعديل حجم الخط */
+  }
+
+  .contact-btn {
+    padding: 12px 25px; /* تقليص الحشو داخل الزر */
+    font-size: 1em; /* تقليص حجم الخط في الزر */
+  }
+
+  .faq-section h2 {
+    font-size: 2.5em; /* تقليص حجم العنوان */
+  }
+
+  .faq-item {
+    margin-bottom: 15px; /* تقليص المسافة بين العناصر */
+  }
+
+  .faq-question {
+    font-size: 1.1em; /* تقليص حجم النص */
+  }
+
+  .faq-answer {
+    font-size: 0.95em; /* تقليص حجم النص */
+  }
+}
+
+/* تصميم استجابة للهواتف الصغيرة */
+@media (max-width: 480px) {
+  /* قسم البطل للاتصال */
+  .contact-content h1 {
+    font-size: 2em; /* تقليص حجم العنوان */
+  }
+
+  .contact-content p {
+    font-size: 1.1em; /* تقليص حجم النص */
+  }
+
+  /* قسم نموذج الاتصال */
+  .contact-container {
+    padding: 15px; /* تقليص الحشو */
+  }
+
+  .contact-btn {
+    padding: 10px 20px; /* تقليص الحشو داخل الزر */
+    font-size: 1em; /* تقليص حجم الخط في الزر */
+  }
+}
+
+/* قسم الأسئلة المتكررة */
+.faq-section {
+  padding: 80px 20px; /* الحشو حول القسم */
+  background: #fff; /* خلفية بيضاء */
+  text-align: center; /* محاذاة النص في المنتصف */
+}
+
+/* عنوان قسم الأسئلة المتكررة */
+.faq-section h2 {
+  font-size: 2.8em; /* حجم العنوان */
+  color: rgb(140, 115, 67); /* لون العنوان */
+  margin-bottom: 40px; /* المسافة أسفل العنوان */
+}
+
+/* حاوية الأسئلة المتكررة */
+.faq-container {
+  max-width: 800px; /* الحد الأقصى للعرض */
+  margin: auto; /* توسيط الحاوية */
+  text-align: left; /* محاذاة النص لليسار */
+}
+
+/* كل عنصر من الأسئلة المتكررة */
+.faq-item {
+  margin-bottom: 20px; /* المسافة بين الأسئلة */
+  border-bottom: 1px solid #ddd; /* خط فاصل أسفل السؤال */
+}
+
+/* سؤال الأسئلة المتكررة */
+.faq-question {
+  background: none; /* إزالة الخلفية */
+  border: none; /* إزالة الحدود */
+  width: 100%; /* عرض كامل */
+  text-align: left; /* محاذاة النص لليسار */
+  padding: 15px 0; /* الحشو */
+  font-size: 1.2em; /* حجم الخط */
+  color: #444; /* لون النص */
+  cursor: pointer; /* تغيير المؤشر إلى يد */
+  position: relative; /* تحديد الموقع بالنسبة للحاوية */
+}
+
+/* علامة زائد عند السؤال */
+.faq-question::after {
+  content: '+';  /* رمز زائد بشكل افتراضي */
+  font-size: 1.5em; /* حجم الخط */
+  position: absolute; /* تحديد الموقع */
+  right: 0; /* محاذاة إلى اليمين */
+  top: 15px; /* المسافة من الأعلى */
+  transition: transform 0.3s ease; /* تأثير الانتقال عند التغيير */
+}
+
+/* عندما يتم فتح السؤال */
+.faq-item.active .faq-question::after {
+  content: '-'; /* تغيير إلى علامة ناقص */
+  transform: rotate(180deg); /* التدوير عند التغيير */
+}
+
+/* إجابة الأسئلة المتكررة */
+.faq-answer {
+  max-height: 0; /* تقليص الارتفاع عند إخفاء الإجابة */
+  overflow: hidden; /* إخفاء النصوص المتجاوزة */
+  transition: max-height 0.4s ease; /* تأثير الانتقال عند إظهار الإجابة */
+  font-size: 1em; /* حجم الخط */
+  color: #555; /* لون النص */
+}
+
+/* عندما يتم فتح الإجابة */
+.faq-item.active .faq-answer {
+  max-height: 200px; /* تحديد الحد الأقصى للارتفاع */
+  margin-bottom: 15px; /* المسافة أسفل الإجابة */
+}
+/* تصميم استجابة لصفحة الأسئلة المتكررة */
+@media (max-width: 768px) {
+  /* قسم الأسئلة المتكررة */
+  .faq-section {
+    padding: 50px 20px; /* إضافة حشو داخلي للقسم */
+  }
+
+  .faq-section h2 {
+    font-size: 2.2em; /* تقليص حجم العنوان */
+    margin-bottom: 30px; /* المسافة أسفل العنوان */
+  }
+
+  .faq-container {
+    max-width: 100%; /* جعل العرض 100% ليشغل المساحة بالكامل */
+    margin: auto; /* توسيط الحاوية */
+    padding: 0 10px; /* إضافة حشو داخلي */
+  }
+
+  /* عنصر الأسئلة المتكررة */
+  .faq-item {
+    margin-bottom: 15px; /* المسافة أسفل كل عنصر */
+  }
+
+  /* سؤال الأسئلة المتكررة */
+  .faq-question {
+    font-size: 16.5px; /* حجم الخط للسؤال */
+    padding: 12px 0; /* إضافة حشو داخل السؤال */
+  }
+
+  /* إجابة الأسئلة المتكررة */
+  .faq-answer {
+    font-size: 0.95em; /* حجم الخط للإجابة */
+  }
+}
+
+@media (max-width: 480px) {
+  .faq-section {
+    padding: 40px 10px; /* تقليص الحشو */
+  }
+
+  .faq-section h2 {
+    font-size: 1em; /* تقليص حجم العنوان */
+    margin-bottom: 20px; /* تقليص المسافة أسفل العنوان */
+  }
+
+  .faq-container {
+    max-width: 100%; /* جعل العرض 100% */
+    margin: auto; /* توسيط الحاوية */
+  }
+
+  .faq-item {
+    margin-bottom: 10px; /* تقليص المسافة أسفل كل عنصر */
+  }
+
+  .faq-question {
+    font-size: 1em; /* تعديل حجم الخط */
+    padding: 10px 0; /* تقليص الحشو داخل السؤال */
+  }
+
+  .faq-answer {
+    font-size: 0.9em; /* تقليص حجم الخط للإجابة */
+  }
+}
+
+/* قسم البطل للحجز */
+.booking-hero {
+  position: relative; /* تحديد الموقع بالنسبة للحاوية الأم */
+  height: 85vh; /* تحديد ارتفاع القسم بالنسبة للعرض */
+  background: url('Royal-Pool1.jpg') center/cover no-repeat; /* تعيين صورة الخلفية */
+  display: flex; /* استخدام Flexbox لمحاذاة العناصر */
+  align-items: center; /* محاذاة العناصر عموديًا */
+  justify-content: center; /* محاذاة العناصر أفقيًا */
+  text-align: center; /* محاذاة النص في المنتصف */
+  color: white; /* تعيين اللون الأبيض للنص */
+}
+
+.booking-overlay {
+  position: absolute; /* تحديد الموقع بشكل مطلق */
+  top: 0;
+  left: 0;
+  width: 100%; /* جعل العرض 100% */
+  height: 100%; /* جعل الارتفاع 100% */
+  background: rgba(0,0,0,0.5);  /* وضع طبقة مظلمة لتحسين قابلية القراءة */
+}
+
+.booking-content {
+  position: relative; /* تحديد الموقع بالنسبة للحاوية الأم */
+  z-index: 2; /* رفع مستوى الظهور */
+  max-width: 800px; /* تحديد الحد الأقصى للعرض */
+  padding: 20px; /* إضافة حشو داخلي */
+}
+
+.booking-content h1 {
+  font-size: 3em; /* تحديد حجم الخط للعناوين */
+  margin-bottom: 10px; /* إضافة مسافة أسفل العنوان */
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.3); /* إضافة ظل للنص */
+}
+
+.booking-content p {
+  font-size: 1.5em; /* تحديد حجم النص */
+}
+
+/* قسم نموذج الحجز */
+.booking-form-section {
+  padding: 80px 20px; /* إضافة حشو داخلي */
+  background: #f8f8f8; /* تعيين خلفية فاتحة */
+  text-align: center; /* محاذاة النص في المنتصف */
+}
+
+.booking-container {
+  max-width: 600px; /* تحديد الحد الأقصى للعرض */
+  margin: auto; /* توسيط الحاوية */
+  background: white; /* تعيين خلفية بيضاء */
+  padding: 40px; /* إضافة حشو داخلي */
+  border-radius: 10px; /* جعل الزوايا مستديرة */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* إضافة ظل خفيف */
+}
+
+.booking-container h2 {
+  font-size: 2em; /* حجم الخط للعناوين */
+  color: rgb(140, 115, 67); /* تعيين اللون المخصص */
+  margin-bottom: 20px; /* المسافة أسفل العنوان */
+}
+
+.form-group {
+  margin-bottom: 20px; /* المسافة أسفل كل مجموعة من العناصر */
+  text-align: left; /* محاذاة النص لليسار */
+}
+
+.form-group label {
+  display: block; /* عرض التسمية كعنصر منفصل */
+  margin-bottom: 5px; /* المسافة أسفل التسمية */
+  color: #333; /* تعيين اللون */
+  font-weight: bold; /* جعل النص بالخط العريض */
+}
+
+.form-group input, 
+.form-group textarea {
+  width: 100%; /* جعل العرض 100% */
+  padding: 10px; /* إضافة حشو داخلي */
+  font-size: 1em; /* تحديد حجم الخط */
+  border: 1px solid #ccc; /* تعيين الحدود */
+  border-radius: 5px; /* جعل الزوايا مستديرة */
+  box-sizing: border-box; /* ضمان أخذ الحشو ضمن العرض الكلي */
+}
+
+.form-group textarea {
+  resize: vertical; /* السماح بتغيير الحجم عموديًا */
+  min-height: 120px; /* تحديد الحد الأدنى للارتفاع */
+}
+
+.booking-btn {
+  display: inline-block; /* عرض الزر بشكل مدمج مع النص */
+  background-color: rgb(140, 115, 67); /* تعيين اللون الخلفي للزر */
+  color: white; /* تعيين اللون الأبيض للنص */
+  padding: 12px 25px; /* إضافة حشو داخلي */
+  font-size: 1.1em; /* تحديد حجم الخط */
+  border: none; /* إزالة الحدود */
+  border-radius: 50px; /* جعل الزر دائري */
+  cursor: pointer; /* تغيير شكل المؤشر عند التمرير على الزر */
+  transition: background 0.3s ease, transform 0.3s ease; /* إضافة تأثيرات الانتقال */
+  width: 100%; /* جعل العرض 100% */
+}
+
+.booking-btn:hover {
+  background-color: rgb(120, 95, 55); /* تغيير اللون عند التمرير */
+  transform: scale(1.05); /* تكبير الزر عند التمرير */
+}
+
+/* تصميم استجابة */
+@media (max-width: 768px) {
+  .booking-hero {
+    height: 60vh; /* تقليص الارتفاع */
+    padding: 20px; /* إضافة حشو داخلي */
+  }
+
+  .booking-content h1 {
+    font-size: 2.5em; /* تقليص حجم العنوان */
+  }
+
+  .booking-content p {
+    font-size: 1.2em; /* تقليص حجم النص */
+  }
+
+  .booking-container {
+    padding: 30px; /* إضافة حشو داخلي */
+  }
+
+  .form-group input, 
+  .form-group textarea {
+    font-size: 0.9em; /* تقليص حجم الخط */
+    padding: 8px; /* تقليص الحشو */
+  }
+
+  .booking-btn {
+    font-size: 1em; /* تقليص حجم الخط */
+    padding: 10px 20px; /* تقليص الحشو */
+  }
+}
+
+@media (max-width: 480px) {
+  .booking-hero {
+    height: 50vh; /* تقليص الارتفاع */
+  }
+
+  .booking-content h1 {
+    font-size: 2em; /* تقليص حجم العنوان */
+  }
+
+  .booking-content p {
+    font-size: 1em; /* تقليص حجم النص */
+  }
+
+  .booking-container {
+    padding: 20px; /* تقليص الحشو */
+  }
+
+  .booking-btn {
+    font-size: 0.9em; /* تقليص حجم الخط */
+    padding: 10px; /* تقليص الحشو */
+  }
+}
+/* قائمة الوصول */
+#accessibility-menu {
+  position: fixed; /* تحديد الموقع كـ ثابت */
+  bottom: 20px; /* وضع القائمة في أسفل الصفحة */
+  right: 20px; /* وضع القائمة على الجهة اليمنى */
+  z-index: 1000; /* تحديد مستوى الظهور لضمان ظهورها فوق العناصر الأخرى */
+  text-align: center; /* محاذاة النص في المنتصف */
+}
+
+/* زر الوصول */
+#accessibility-btn {
+  background: rgb(140, 115, 67); /* تعيين خلفية الزر باللون المخصص */
+  color: white; /* تعيين اللون الأبيض للنص */
+  padding: 10px 15px; /* إضافة حشو داخلي حول النص */
+  border: none; /* إزالة الحدود */
+  cursor: pointer; /* تغيير شكل المؤشر عند التمرير فوق الزر */
+  border-radius: 5px; /* جعل الزوايا مستديرة */
+  font-size: 16px; /* تحديد حجم الخط */
+}
+
+/* خيارات الوصول */
+#accessibility-options {
+  display: none; /* إخفاء الخيارات بشكل افتراضي */
+  background: white; /* تعيين خلفية بيضاء للخيارات */
+  border-radius: 5px; /* جعل الزوايا مستديرة */
+  padding: 10px; /* إضافة حشو داخلي */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* إضافة ظل خفيف لتحديد الخيارات */
+  margin-top: 5px; /* إضافة مسافة بين الزر والخيارات */
+}
+
+/* زر داخل خيارات الوصول */
+#accessibility-options button {
+  background: rgb(140, 115, 67); /* تعيين نفس اللون الخلفي للزر داخل الخيارات */
+  color: white; /* تعيين اللون الأبيض للنص */
+  border: none; /* إزالة الحدود */
+  margin: 5px; /* إضافة مسافة بين الأزرار */
+  padding: 5px 10px; /* إضافة حشو داخلي حول النص */
+  cursor: pointer; /* تغيير شكل المؤشر عند التمرير فوق الزر */
+  border-radius: 3px; /* جعل الزوايا مستديرة */
+  font-size: 14px; /* تحديد حجم الخط للأزرار */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
